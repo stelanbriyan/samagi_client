@@ -1,0 +1,61 @@
+table{
+    width: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    /*border-collapse: collapse;*/ 
+
+}
+
+th{
+    background-color: lightgoldenrodyellow;
+    /*border: 1px solid grey;*/ 
+    text-align: center;
+    padding: 10px;
+    color: dimgrey;
+}
+
+td{
+    /*background-color: white;*/
+    /*border: 1px solid grey;*/ 
+    padding: 10px;
+    color: grey;
+}
+tr{
+    background-color: lightyellow;
+}
+
+.total{
+    text-align: right;
+}
+
+.bottomtr{
+    background-color: wheat;
+}
+.top1{
+    font-size: 16px;
+    color: gray;
+    font-family: sans-serif;
+}
+.top2{
+    font-size: 13px;
+    color: gray;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    height: auto;
+    border-bottom: 1px solid;
+}
+.top3{
+    font-size: 12px;
+    color: gray;
+    font-family: sans-serif;
+}
+
+.b{
+    background-color: gainsboro;
+    font-size: 12px;
+    color: gainsboro;
+    font-family: sans-serif;
+}
+hr{
+    background-color: whitesmoke;
+}

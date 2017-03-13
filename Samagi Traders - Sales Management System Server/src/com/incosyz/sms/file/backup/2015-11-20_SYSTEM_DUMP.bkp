@@ -1,0 +1,597 @@
+-- MySQL dump 10.13  Distrib 5.5.8, for Win32 (x86)
+--
+-- Host: localhost    Database: samagi
+-- ------------------------------------------------------
+-- Server version	5.5.8
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `accountId` int(11) NOT NULL AUTO_INCREMENT,
+  `accountDate` date DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `income` decimal(10,0) DEFAULT NULL,
+  `expenditure` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`accountId`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` VALUES (7,'2015-11-19','Electricity bill payments',NULL,12000);
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `batch`
+--
+
+DROP TABLE IF EXISTS `batch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `batch` (
+  `batchId` varchar(10) NOT NULL,
+  `consignmentNoteNo` varchar(100) DEFAULT NULL,
+  `orderRequestNo` varchar(100) DEFAULT NULL,
+  `transportInvoiceNo` varchar(100) DEFAULT NULL,
+  `batchDate` date DEFAULT NULL,
+  `transportOrderNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `userId` varchar(100) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `warrantyManual` int(11) DEFAULT NULL,
+  `sideMirror` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  `toolKit` int(11) DEFAULT NULL,
+  `manual` int(11) DEFAULT NULL,
+  `contactNo` varchar(100) DEFAULT NULL,
+  `vehicleNo` varchar(100) DEFAULT NULL,
+  `driverName` varchar(100) DEFAULT NULL,
+  `helperName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`batchId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `batch`
+--
+
+LOCK TABLES `batch` WRITE;
+/*!40000 ALTER TABLE `batch` DISABLE KEYS */;
+INSERT INTO `batch` VALUES ('B001','MDF623121','3555','','2015-11-12','',NULL,'',5,5,55,5,5,5,'','','','');
+/*!40000 ALTER TABLE `batch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikemodel`
+--
+
+DROP TABLE IF EXISTS `bikemodel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikemodel` (
+  `bikeModelId` varchar(10) NOT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `priceAnnouncementId` varchar(10) DEFAULT NULL,
+  `bikeOption` varchar(100) DEFAULT NULL,
+  `capacity` int(11) DEFAULT NULL,
+  `commision` decimal(10,2) DEFAULT NULL,
+  `netAmount` decimal(10,2) DEFAULT NULL,
+  `note` varchar(200) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  PRIMARY KEY (`bikeModelId`),
+  KEY `priceAnnouncementId` (`priceAnnouncementId`),
+  CONSTRAINT `bikemodel_ibfk_1` FOREIGN KEY (`priceAnnouncementId`) REFERENCES `priceannouncement` (`priceAnnouncementId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikemodel`
+--
+
+LOCK TABLES `bikemodel` WRITE;
+/*!40000 ALTER TABLE `bikemodel` DISABLE KEYS */;
+INSERT INTO `bikemodel` VALUES ('B003','M002','P002','GS ',40,6000.00,270000.00,NULL,1,1),('B004','M003','P001','DRUM - GS ',50,5000.00,197500.00,NULL,1,1),('B005','M001','P003','GS ',80,9000.00,250000.00,NULL,1,1),('B006','M002','P003','ES - GS - DRUM ',80,6000.00,230000.00,NULL,1,1);
+/*!40000 ALTER TABLE `bikemodel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikeoption`
+--
+
+DROP TABLE IF EXISTS `bikeoption`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikeoption` (
+  `optionId` int(11) NOT NULL AUTO_INCREMENT,
+  `optionName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`optionId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikeoption`
+--
+
+LOCK TABLES `bikeoption` WRITE;
+/*!40000 ALTER TABLE `bikeoption` DISABLE KEYS */;
+INSERT INTO `bikeoption` VALUES (1,'ES'),(2,'GS'),(3,'DRUM');
+/*!40000 ALTER TABLE `bikeoption` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cash`
+--
+
+DROP TABLE IF EXISTS `cash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cash` (
+  `cashId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `cashAmount` decimal(10,0) DEFAULT NULL,
+  `cashDate` date DEFAULT NULL,
+  PRIMARY KEY (`cashId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cash_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cash`
+--
+
+LOCK TABLES `cash` WRITE;
+/*!40000 ALTER TABLE `cash` DISABLE KEYS */;
+INSERT INTO `cash` VALUES ('C001','P001',25000,'2015-11-12'),('C002','P002',5652,'2015-11-13'),('C003','P003',150000,'2015-11-13'),('C004','P004',82100,'2015-11-13'),('C005','P005',60000,'2015-11-16'),('C006','P007',50000,'2015-11-16'),('C007','P008',20000,'2015-11-16'),('C008','P006',100000,'2015-11-16'),('C009','P006',84600,'2015-11-16'),('C010','P002',271448,'2015-11-16'),('C011','P008',4600,'2015-11-16'),('C012','P009',17100,'2015-11-16'),('C013','P011',50000,'2015-11-16'),('C014','P012',20000,'2015-11-16'),('C015','P013',80000,'2015-11-17'),('C016','P014',80323,'2015-11-17'),('C017','P015',60000,'2015-11-17'),('C018','P016',60000,'2015-11-17'),('C019','P023',176600,'2015-11-17'),('C020','P021',50000,'2015-11-17'),('C021','P022',183100,'2015-11-17'),('C022','P024',52000,'2015-11-17'),('C023','P024',16100,'2015-11-17'),('C024','P012',138100,'2015-11-18'),('C025','P010',0,'2015-11-18'),('C026','P013',1000,'2015-11-18'),('C027','P013',120600,'2015-11-18'),('C028','P021',1000,'2015-11-18'),('C029','P021',1000,'2015-11-18'),('C030','P021',1000,'2015-11-18'),('C031','P010',1000,'2015-11-18'),('C032','P005',100,'2015-11-18'),('C033','P025',50000,'2015-11-18'),('C034','P026',50000,'2015-11-18'),('C035','P027',50000,'2015-11-18'),('C036','P028',200000,'2015-11-18'),('C037','P029',2500,'2015-11-18'),('C038','P030',50000,'2015-11-19'),('C039','P031',50000,'2015-11-19'),('C040','P032',50000,'2015-11-19'),('C041','P033',53600,'2015-11-19'),('C042','P034',60000,'2015-11-19'),('C043','P035',98000,'2015-11-19'),('C044','P036',89600,'2015-11-19'),('C045','P038',60000,'2015-11-19'),('C046','P039',89000,'2015-11-19'),('C047','P041',60000,'2015-11-19'),('C048','P041',52100,'2015-11-19'),('C049','P043',56000,'2015-11-19'),('C050','P044',60000,'2015-11-19'),('C051','P045',54000,'2015-11-19'),('C052','P046',50000,'2015-11-19'),('C053','P049',50000,'2015-11-20'),('C054','P050',60000,'2015-11-20'),('C055','P051',100000,'2015-11-20'),('C056','P052',46000,'2015-11-20'),('C057','P053',80000,'2015-11-20');
+/*!40000 ALTER TABLE `cash` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cheque`
+--
+
+DROP TABLE IF EXISTS `cheque`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cheque` (
+  `chequeId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `checkNo` varchar(100) DEFAULT NULL,
+  `bankName` varchar(100) DEFAULT NULL,
+  `chequeDate` date DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `issuedBy` varchar(100) DEFAULT NULL,
+  `chequeType` varchar(100) DEFAULT NULL,
+  `accountNo` varchar(100) DEFAULT NULL,
+  `note` varchar(100) DEFAULT NULL,
+  `isIssued` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`chequeId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cheque_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cheque`
+--
+
+LOCK TABLES `cheque` WRITE;
+/*!40000 ALTER TABLE `cheque` DISABLE KEYS */;
+INSERT INTO `cheque` VALUES ('C001',NULL,'6532643','Amana Bank PLC','2015-11-13',50000,'','Trill Tape','Cash Cheque','535131323','','0'),('C003',NULL,'8652525','Amana Bank PLC','2015-11-13',60000,'','ABC','Cash Cheque','343434343','','0'),('C005',NULL,'213213213','Cargills Bank Ltd.','2015-11-13',60000,'','TVS','Cash Cheque','21121',NULL,'1'),('C006',NULL,'626656','People\'s Bank','2015-11-13',75000,'','Kaza','Cash Cheque','6263',NULL,'0'),('C008',NULL,'5651323123','Amana Bank PLC','2015-11-13',56000,'Money Got','Kaza','Cash Cheque','4522335',NULL,'1'),('C009',NULL,'6653','Amana Bank PLC','2015-11-13',30000,'','Nidura','Cash Cheque','65623',NULL,'1'),('C011',NULL,'6566','Hatton National Bank PLC','2015-11-13',45000,'','Chamara','Date Cheque','6562323',NULL,'0'),('C012',NULL,'659232','Amana Bank PLC','2015-11-13',56000,'Money Got','Manoj','Cash Cheque','3243424432',NULL,'1'),('C013','P003','12469','Nations Trust','2015-11-13',58000,'Money Got','',NULL,NULL,NULL,'0'),('C014','P003','12479','Nations Trust','2015-11-13',60200,'Money Got','mm','','','','0'),('C015','P004','70022','Nations Trust','2015-11-13',70000,'Money Got','ABBBC CHECK',NULL,NULL,NULL,'0'),('C016','P004','70023','Nations Trust','2015-11-13',125000,'Money Got','ABBBC CHECK',NULL,NULL,NULL,'0'),('C017','P005','653235','Nations Trust','2015-11-16',45000,'Money Got','Stelan Briyan Simonsz',NULL,NULL,NULL,'0'),('C018','P005','5623','Nations Trust','2015-11-16',50000,'','Stelan Briyan Simonsz',NULL,NULL,NULL,'0'),('C019','P005','2356','Nations Trust','2015-11-16',50000,'Money Got','Stelan Briyan Simonsz',NULL,NULL,NULL,'0'),('C020','P006','2542','Nations Trust','2015-11-16',20000,NULL,'Manoj Madusanka',NULL,NULL,NULL,'0'),('C021','P008','6532','Nations Trust','2015-11-16',60000,NULL,'Kaza Chamara',NULL,NULL,NULL,'0'),('C022','P008','6534','Nations Trust','2015-11-16',120000,'','Kaza Chamara',NULL,NULL,NULL,'0'),('C023','P009','9562','Nations Trust','2015-11-16',20000,NULL,'ABC',NULL,NULL,NULL,'0'),('C024','P009','9563','Nations Trust','2015-11-16',40000,NULL,'ABC',NULL,NULL,NULL,'0'),('C025','P024','32623','Nations Trust','2015-11-17',25000,NULL,'SDawd',NULL,NULL,NULL,'0'),('C026','P024','32625','Nations Trust','2015-11-17',55000,NULL,'SDawd',NULL,NULL,NULL,'0'),('C027','P025','232323','Nations Trust','2015-11-18',25000,NULL,'Nirosha Perera',NULL,NULL,NULL,'0'),('C028','P025','2323244','Nations Trust','2015-11-18',25000,NULL,'Nirosha Perera',NULL,NULL,NULL,'0'),('C029','P026','3652','Nations Trust','2015-11-18',5000,NULL,'Stelan Briyan',NULL,NULL,NULL,'0'),('C030','P026','3653','Nations Trust','2015-11-18',50000,NULL,'Stelan Briyan',NULL,NULL,NULL,'0'),('C031','P027','213','Nations Trust','2015-11-18',20000,'Money Got','Stelan Briyan',NULL,NULL,NULL,'0'),('C032','P027','2133','Nations Trust','2015-11-18',20000,NULL,'Stelan Briyan',NULL,NULL,NULL,'0'),('C033','P036','65322','Nations Trust','2015-11-19',20250,NULL,'AWR',NULL,NULL,NULL,'0'),('C034','P040','4323','Nations Trust','2015-11-19',50000,'Money Got','KLP',NULL,NULL,NULL,'0'),('C035','P041','6562','Nations Trust','2015-11-19',98000,NULL,'QWE',NULL,NULL,NULL,'0'),('C036','P042','5744','Nations Trust','2015-11-19',40000,'','SDEF',NULL,NULL,NULL,'0'),('C037','P046','6323','Nations Trust','2015-11-19',200000,NULL,'ALK',NULL,NULL,NULL,'0'),('C038',NULL,'32326','Amana Bank PLC','2015-11-24',90000,'','ABC','Cash Cheque','22365623','','0'),('C039','P047','63256','Nations Trust','2015-11-20',35000,'','ABCDEFGHIIJKLMNOPQRSTUVWXYZ','','','','1'),('C040','P047','63258','Nations Trust','2015-11-20',35000,NULL,'ABCDEFGHIIJKLMNOPQRSTUVWXYZ',NULL,NULL,NULL,'0'),('C041','P048','523623','Nations Trust','2015-11-30',90000,NULL,'PLKOIJUGY',NULL,NULL,NULL,'0'),('C042','P049','2213122','Nations Trust','2015-11-20',50222,NULL,'ASD',NULL,NULL,NULL,'0');
+/*!40000 ALTER TABLE `cheque` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `colour`
+--
+
+DROP TABLE IF EXISTS `colour`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `colour` (
+  `colourId` int(11) NOT NULL AUTO_INCREMENT,
+  `colourName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`colourId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colour`
+--
+
+LOCK TABLES `colour` WRITE;
+/*!40000 ALTER TABLE `colour` DISABLE KEYS */;
+INSERT INTO `colour` VALUES (1,'RED'),(2,'WHIte');
+/*!40000 ALTER TABLE `colour` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `consignmentdealer`
+--
+
+DROP TABLE IF EXISTS `consignmentdealer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `consignmentdealer` (
+  `specialDealerId` varchar(10) NOT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `specialPrice` decimal(10,2) DEFAULT NULL,
+  `dealerMargine` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`specialDealerId`),
+  KEY `bikeModelId` (`bikeModelId`),
+  CONSTRAINT `consignmentdealer_ibfk_1` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `consignmentdealer`
+--
+
+LOCK TABLES `consignmentdealer` WRITE;
+/*!40000 ALTER TABLE `consignmentdealer` DISABLE KEYS */;
+INSERT INTO `consignmentdealer` VALUES ('D001','B005',197000.00,5000.00),('D002','B005',250000.00,9000.00);
+/*!40000 ALTER TABLE `consignmentdealer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `customerId` varchar(10) NOT NULL,
+  `customerName` varchar(100) DEFAULT NULL,
+  `nic` varchar(100) DEFAULT NULL,
+  `addressLine1` varchar(100) DEFAULT NULL,
+  `addressLine2` varchar(100) DEFAULT NULL,
+  `addressLine3` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`customerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES ('C002','New Man','1254589656v','','',''),('C003','Manoj Madusanka','94562255v','','',''),('C004','ABBBC CHECK','945633255v','','',''),('C005','Stelan Briyan Simonsz','942355223v','125 J Uyanaroad','Kotelawela','Bandaragama'),('C006','Manoj Madusanka','94562323v','','',''),('C007','Nidura','943232623v','A1','A2','A3'),('C008','Kaza Chamaras','946532353vv','a11','a22','a33'),('C009','ABC','9422023v','','',''),('C010','abc','946532352v','','',''),('C012','a','942320362v','','',''),('C013','m','65612','','',''),('C016','u','23','','',''),('C018','as','5453','','',''),('C020','asd','12434343','','',''),('C021','Tikiri Manike','4','','',''),('C022','c','1','','',''),('C023','Nirosha Perera','0716652623','','',''),('C024','SDawd','434','','',''),('C025','Nirosha Perera','945665265v','No 40','Galle road','Payagala'),('C029','Stelan Briyan','942300255v','No 50','Uyanaroad','Kotelawela'),('C030','ABCV','456123789v','','',''),('C031','APL','456532254v','','',''),('C032','APM','78968452v','','',''),('C033','ACD','5623365452v','','',''),('C034','AML','452589632v','','',''),('C035','AHK','2334216566v','','',''),('C036','AWR','22434344344v','','',''),('C037','MNBV','34334343v','','',''),('C038','ASDFG','23323223v','','',''),('C039','FGH','123456v','','',''),('C040','KLP','654v','','',''),('C041','QWE','232v','','',''),('C042','SDEF','43434','','',''),('C043','FSSS','3232v','','',''),('C044','d','562v','','',''),('C045','s','','','',''),('C046','ALK','2323','','',''),('C047','ABCDEFGHIIJKLMNOPQRSTUVWXYZ','65326236v','','',''),('C048','PLKOIJUGY','878687v','','',''),('C049','ASD','9423','','',''),('C050','KLMN','342432424v','','',''),('C051','SDSDSDSDSDS','214796532v','','',''),('C052','CXXCX','2332323v','','',''),('C053','APOAPOAPO','452v5','','','');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `homephone`
+--
+
+DROP TABLE IF EXISTS `homephone`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `homephone` (
+  `homePhoneId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `homePhoneNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`homePhoneId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `homephone_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `homephone`
+--
+
+LOCK TABLES `homephone` WRITE;
+/*!40000 ALTER TABLE `homephone` DISABLE KEYS */;
+INSERT INTO `homephone` VALUES (1,'C005','0382256566'),(2,'C005','0365656562'),(3,NULL,'1'),(4,NULL,'2'),(5,NULL,'3'),(6,'C008','0115465666'),(7,'C008','0115465656'),(8,'C008','0385656564'),(9,'C025','0118796565'),(10,'C025','0115456565');
+/*!40000 ALTER TABLE `homephone` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leasing`
+--
+
+DROP TABLE IF EXISTS `leasing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leasing` (
+  `leasingId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `leasingAmount` decimal(10,0) DEFAULT NULL,
+  `mta` int(11) DEFAULT NULL,
+  `mta2` int(11) DEFAULT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `do2` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  `gs` int(11) DEFAULT NULL,
+  `gap` int(11) DEFAULT NULL,
+  `garanter` varchar(300) DEFAULT NULL,
+  `leasingName` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`leasingId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `leasing_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leasing`
+--
+
+LOCK TABLES `leasing` WRITE;
+/*!40000 ALTER TABLE `leasing` DISABLE KEYS */;
+INSERT INTO `leasing` VALUES ('L001','P001',177000,0,0,0,0,0,0,0,0,'','1'),('L002','P005',72000,0,0,0,0,0,0,1,0,'s','1'),('L003','P009',200000,0,0,0,0,0,0,0,0,'','1'),('L004','P010',100000,1,0,1,1,0,0,1,0,'','1'),('L005','P012',50000,0,0,1,0,1,0,0,0,'','0'),('L006','P017',25000,1,0,0,0,0,0,0,1,'','1'),('L007','P019',25000,1,0,0,0,0,0,0,1,'','1'),('L008','P020',25000,0,0,1,0,0,0,0,0,'','1'),('L009','P021',50000,0,1,0,1,0,0,1,1,'','1'),('L010','P022',25000,0,0,0,0,0,0,0,0,'','1'),('L011','P023',25000,1,1,0,0,0,0,0,1,'','1'),('L012','P024',60000,0,1,0,0,0,0,1,0,'','1'),('L013','P025',80000,0,0,0,0,0,0,1,0,'','1'),('L014','P026',100000,1,0,0,0,0,0,1,0,'','1'),('L015','P035',25000,0,0,0,0,0,0,1,0,'','1'),('L016','P037',43000,0,0,0,0,0,0,0,0,'','1'),('L017','P039',120000,0,0,0,0,0,0,0,0,'','1'),('L018','P046',29100,1,0,0,0,0,0,0,0,'','1'),('L019','P047',50000,1,0,0,0,0,0,1,0,'','1'),('L020','P048',60320,0,0,0,1,0,0,1,0,'','1'),('L021','P050',62000,0,0,0,1,0,0,0,1,'','1'),('L022','P051',52000,0,0,0,0,0,0,0,0,'','1'),('L023','P052',100000,0,0,0,0,0,0,0,0,'','1');
+/*!40000 ALTER TABLE `leasing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mobile`
+--
+
+DROP TABLE IF EXISTS `mobile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mobile` (
+  `mobileId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `mobileNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`mobileId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `mobile_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mobile`
+--
+
+LOCK TABLES `mobile` WRITE;
+/*!40000 ALTER TABLE `mobile` DISABLE KEYS */;
+INSERT INTO `mobile` VALUES (1,'C005','0778875025'),(2,'C005','0712235656'),(3,'C005','0786565666'),(4,'C007','1'),(5,'C007','2'),(6,'C007','3'),(7,'C007','4'),(8,'C008','0718852325'),(9,'C008','0778852555'),(10,'C008','0725465656'),(11,'C008','0714656566'),(12,'C009','0716565656'),(13,'C025','0778788888'),(14,'C029','0778875025'),(15,'C029','0778875025'),(16,'C029','0778875025'),(17,'C029','0778875025'),(18,'C029','0778875025'),(19,'C029','0778875025'),(20,'C029','0778875025'),(21,'C029','0778875025');
+/*!40000 ALTER TABLE `mobile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model`
+--
+
+DROP TABLE IF EXISTS `model`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model` (
+  `modelId` varchar(10) NOT NULL,
+  `modelName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`modelId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model`
+--
+
+LOCK TABLES `model` WRITE;
+/*!40000 ALTER TABLE `model` DISABLE KEYS */;
+INSERT INTO `model` VALUES ('M001','SCOOTY PEP PLUS'),('M002','ZERO'),('M003','WEGO'),('M004','wego ( refresh )');
+/*!40000 ALTER TABLE `model` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ordertable`
+--
+
+DROP TABLE IF EXISTS `ordertable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ordertable` (
+  `orderId` varchar(10) NOT NULL,
+  `roundNo` varchar(10) DEFAULT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `customerId` varchar(10) DEFAULT NULL,
+  `rmvId` varchar(10) DEFAULT NULL,
+  `userId` varchar(10) DEFAULT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `orderTime` varchar(100) DEFAULT NULL,
+  `orderDate` date DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `rmv` int(11) DEFAULT NULL,
+  `insurance` int(11) DEFAULT NULL,
+  PRIMARY KEY (`orderId`),
+  KEY `roundNo` (`roundNo`),
+  KEY `bikeModelId` (`bikeModelId`),
+  KEY `customerId` (`customerId`),
+  KEY `rmvId` (`rmvId`),
+  KEY `userId` (`userId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `ordertable_ibfk_1` FOREIGN KEY (`roundNo`) REFERENCES `stock` (`roundNo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_2` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_3` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_4` FOREIGN KEY (`rmvId`) REFERENCES `rmv` (`rmvId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_5` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_6` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ordertable`
+--
+
+LOCK TABLES `ordertable` WRITE;
+/*!40000 ALTER TABLE `ordertable` DISABLE KEYS */;
+INSERT INTO `ordertable` VALUES ('O001','4501/44','B005','C029','R026','U003','P029','10:29:53','2015-11-18','',208100,1,1),('O002','2012/65','B005','C030','R027','U003','P030','01:21:13','2015-11-19','',211100,1,1),('O003','2033/54','B005','C031','R028','U003','P031','01:41:37','2015-11-19','',210100,1,1),('O004','2033/20','B005','C032','R029','U003','P032','01:46:00','2015-11-19','',210100,1,1),('O005','1022/22','B005','C033','R030','U003','P033','01:46:52','2015-11-19','',210100,1,1),('O006','6523/14','B005','C034','R031','U003','P034','02:12:39','2015-11-19','',210100,1,1),('O007','7056/32','B005','C035','R032','U003','P035','02:15:06','2015-11-19','',210100,1,1),('O008','7021/22','B005','C036','R033','U003','P036','02:17:17','2015-11-19','',210100,1,1),('O009','4520/21','B005','C037','R034','U003','P037','02:19:20','2015-11-19','',210100,1,1),('O010','8901/13','B005','C038','R035','U003','P038','03:21:41','2015-11-19','',210100,1,1),('O011','7021/32','B005','C039','R036','U003','P039','03:36:12','2015-11-19','',210100,1,1),('O012','5502/11','B005','C040','R037','U003','P040','03:39:51','2015-11-19','',210100,1,1),('O013','7500/54','B005','C041','R038','U003','P041','03:43:54','2015-11-19','',210100,1,1),('O014','8900/12','B005','C042','R039','U003','P042','04:01:05','2015-11-19','',210100,1,1),('O015','2122/12','B004','C043','R040','U003','P043','04:10:38','2015-11-19','',206600,1,1),('O017','5602/22','B004','C045','R042','U003','P045','04:18:25','2015-11-19','',206600,1,1),('O018','2034/20','B006','C047','R044','U003','P047','02:33:29','2015-11-20','',239100,1,1),('O019','2073/54','B006','C048','R045','U003','P048','02:35:02','2015-11-20','',239100,1,1),('O020','7022/22','B006','C049','R046','U003','P049','07:48:27','2015-11-20','',239100,1,1),('O021','4502/53','B005','C050','R047','U003','P050','11:42:34','2015-11-20','',259100,1,1),('O022','4506/53','B006','C051','R048','U003','P051','11:43:46','2015-11-20','',239100,1,1),('O023','2334/22','B005','C052','R049','U003','P052','11:45:46','2015-11-20','',259100,1,1),('O024','4522/22','B005','C053','R050','U003','P053','11:49:53','2015-11-20','',259100,1,1);
+/*!40000 ALTER TABLE `ordertable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payment` (
+  `paymentId` varchar(10) NOT NULL,
+  `commision` decimal(10,0) DEFAULT NULL,
+  `bikeAmount` decimal(10,0) DEFAULT NULL,
+  `rmvAmount` decimal(10,0) DEFAULT NULL,
+  `insuranceAmount` decimal(10,0) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `otherPaymentAmount` decimal(10,0) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`paymentId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payment`
+--
+
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+INSERT INTO `payment` VALUES ('P001',4500,270000,6500,600,0,2000,''),('P002',6500,270000,6500,600,0,NULL,NULL),('P003',6500,270000,6500,600,0,NULL,NULL),('P004',6500,270000,6500,600,0,NULL,NULL),('P005',6500,270000,6500,600,0,NULL,NULL),('P006',5000,197500,6500,600,0,NULL,NULL),('P007',6500,270000,6500,600,0,NULL,NULL),('P008',5000,197500,6500,600,0,NULL,NULL),('P009',6500,270000,6500,600,0,NULL,NULL),('P010',5600,201000,6500,600,0,NULL,NULL),('P011',5600,201000,6500,600,0,NULL,NULL),('P012',5600,201000,6500,600,0,NULL,NULL),('P013',5600,201000,6500,600,0,NULL,NULL),('P014',5600,201000,6500,600,0,NULL,NULL),('P015',5600,201000,6500,600,0,NULL,NULL),('P016',5600,201000,6500,600,0,NULL,NULL),('P017',5600,201000,6500,600,0,NULL,NULL),('P018',5600,201000,6500,600,0,NULL,NULL),('P019',5600,201000,6500,600,0,NULL,NULL),('P020',5600,201000,6500,600,0,NULL,NULL),('P021',5600,201000,6500,600,0,NULL,NULL),('P022',5600,201000,6500,600,0,NULL,NULL),('P023',5600,201000,6500,600,0,NULL,NULL),('P024',3600,201000,6500,600,0,2000,''),('P025',3600,201000,6500,600,0,2000,'hi'),('P026',6500,270000,0,0,0,NULL,NULL),('P027',6500,270000,0,0,0,NULL,NULL),('P028',5600,201000,0,0,0,NULL,NULL),('P029',5600,201000,0,0,0,NULL,NULL),('P030',6600,202000,8500,600,0,0,''),('P031',5600,201000,8500,600,0,NULL,NULL),('P032',5600,201000,8500,600,0,NULL,NULL),('P033',5600,201000,8500,600,0,NULL,NULL),('P034',5600,201000,8500,600,0,NULL,NULL),('P035',5600,201000,8500,600,0,NULL,NULL),('P036',5600,201000,8500,600,0,NULL,NULL),('P037',5600,201000,8500,600,0,NULL,NULL),('P038',5600,201000,8500,600,0,NULL,NULL),('P039',5600,201000,8500,600,0,NULL,NULL),('P040',5600,201000,8500,600,0,NULL,NULL),('P041',5600,201000,8500,600,0,NULL,NULL),('P042',5600,201000,8500,600,0,NULL,NULL),('P043',5000,197500,8500,600,0,NULL,NULL),('P044',6500,270000,8500,600,0,NULL,NULL),('P045',5000,197500,8500,600,0,NULL,NULL),('P046',6500,270000,8500,600,0,NULL,NULL),('P047',6000,230000,8500,600,0,NULL,NULL),('P048',6000,230000,8500,600,0,NULL,NULL),('P049',6000,230000,8500,600,0,NULL,NULL),('P050',9000,250000,8500,600,0,NULL,NULL),('P051',6000,230000,8500,600,0,NULL,NULL),('P052',9000,250000,8500,600,0,NULL,NULL),('P053',9000,250000,8500,600,0,NULL,NULL);
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `priceannouncement`
+--
+
+DROP TABLE IF EXISTS `priceannouncement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `priceannouncement` (
+  `priceAnnouncementId` varchar(10) NOT NULL,
+  `priceAnnouncementDate` date DEFAULT NULL,
+  `effectDate` date DEFAULT NULL,
+  PRIMARY KEY (`priceAnnouncementId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `priceannouncement`
+--
+
+LOCK TABLES `priceannouncement` WRITE;
+/*!40000 ALTER TABLE `priceannouncement` DISABLE KEYS */;
+INSERT INTO `priceannouncement` VALUES ('P001','2015-11-12','2015-11-12'),('P002','2015-11-14','2015-11-14'),('P003','2015-11-16','2015-11-14');
+/*!40000 ALTER TABLE `priceannouncement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rmv`
+--
+
+DROP TABLE IF EXISTS `rmv`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rmv` (
+  `rmvId` varchar(10) NOT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  PRIMARY KEY (`rmvId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rmv`
+--
+
+LOCK TABLES `rmv` WRITE;
+/*!40000 ALTER TABLE `rmv` DISABLE KEYS */;
+INSERT INTO `rmv` VALUES ('R001',0,0,0),('R002',0,0,0),('R003',0,0,0),('R004',0,0,0),('R005',0,0,0),('R006',0,0,0),('R007',0,0,0),('R008',0,0,0),('R009',0,0,0),('R010',1,0,0),('R011',1,0,1),('R012',0,0,0),('R013',1,1,1),('R014',0,0,0),('R015',0,0,0),('R016',0,0,0),('R017',1,0,0),('R018',0,1,1),('R019',0,1,1),('R020',0,0,0),('R021',0,0,0),('R022',0,0,0),('R023',0,0,0),('R024',0,0,0),('R025',0,0,0),('R026',0,0,0),('R027',0,0,0),('R028',0,0,0),('R029',0,0,0),('R030',0,0,0),('R031',0,0,0),('R032',0,0,0),('R033',0,0,0),('R034',0,0,0),('R035',0,0,0),('R036',0,0,0),('R037',1,0,0),('R038',0,0,0),('R039',0,0,0),('R040',0,0,0),('R041',0,0,1),('R042',0,0,0),('R043',0,0,0),('R044',0,0,0),('R045',1,0,0),('R046',0,0,0),('R047',0,0,0),('R048',0,0,0),('R049',0,0,0),('R050',0,0,0);
+/*!40000 ALTER TABLE `rmv` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stock` (
+  `batchId` varchar(10) DEFAULT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `roundNo` varchar(10) NOT NULL,
+  `engineNo` varchar(100) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `isSold` int(11) DEFAULT NULL,
+  `remark` varchar(300) DEFAULT NULL,
+  `chassisNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `colour` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`roundNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stock`
+--
+
+LOCK TABLES `stock` WRITE;
+/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
+INSERT INTO `stock` VALUES ('B001','M001','1022/22','611233213DSDSDDSD',NULL,0,'','2311352','','WHITE '),('B001','M001','2012/65','651321623',NULL,0,'','','','WHITE - RED '),('B001','M001','2033/20','3535135',NULL,0,'','1123.12312','','RED - WHITE '),('B001','M001','2033/54','34SDSD344434',NULL,0,'','456233','','WHITE '),('B001','M002','2034/20','3535135',NULL,0,'','1123.12312','','RED '),('B001','M002','2073/54','34SDSD344434',NULL,0,'','456233','','WHITE - RED '),('B001','M003','2122/12','5611315131323',NULL,0,'','WDS3223153223','','WHITE - RED '),('B001','M001','2334/22','SDSDSD',NULL,0,'','34344','','WHITE '),('B001','M001','4501/44','442424242',NULL,0,'','4442121','','WHITE '),('B001','M001','4502/53','DS5323232',NULL,0,'','DWSDSD','','WHITE '),('B001','M002','4506/53','DS5323232',NULL,0,'','DWSDSD','','WHITE - RED '),('B001','M001','4520/21','5632532',NULL,0,'','','','WHITE '),('B001','M001','4522/22','SD',NULL,0,'','AS','','WHITE '),('B001','M001','5502/11','1312',NULL,0,'','2132','','WHITE '),('B001','M003','5602/22','232322322',NULL,0,'','63662','','WHITE - RED '),('B001','M001','6523/14','5612WDSDS',NULL,0,'','','','WHITE '),('B001','M001','7021/22','324324SDSD',NULL,0,'','2432424432424','','WHITE '),('B001','M001','7021/32','6532651SSF',NULL,0,'','864535623','','WHITE - RED '),('B001','M002','7022/22','XSDSD324324324',NULL,0,'','2432424432424','','WHITE - RED '),('B001','M001','7056/32','6532651SSF',NULL,0,'','864535623','','WHITE - RED '),('B001','M001','7500/54','4221212',NULL,0,'','4252121242','','WHITE - RED '),('B001','M001','8900/12','51332SSSDWWD',NULL,0,'','5123WDWDS','','RED - WHITE '),('B001','M001','8901/13','1321531SDSDS',NULL,0,'','98452WDSAW','','RED ');
+/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `userId` varchar(10) NOT NULL,
+  `userName` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `userType` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('U003','whmanoj','57895265','Admin Account');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-11-20 23:51:16

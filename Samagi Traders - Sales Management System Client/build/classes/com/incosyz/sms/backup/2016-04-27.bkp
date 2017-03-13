@@ -1,0 +1,637 @@
+-- MySQL dump 10.13  Distrib 5.5.27, for Win32 (x86)
+--
+-- Host: localhost    Database: samagi
+-- ------------------------------------------------------
+-- Server version	5.5.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `accountId` int(11) NOT NULL AUTO_INCREMENT,
+  `accountDate` date DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `income` decimal(10,0) DEFAULT NULL,
+  `expenditure` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`accountId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `batch`
+--
+
+DROP TABLE IF EXISTS `batch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `batch` (
+  `batchId` varchar(10) NOT NULL,
+  `consignmentNoteNo` varchar(100) DEFAULT NULL,
+  `orderRequestNo` varchar(100) DEFAULT NULL,
+  `transportInvoiceNo` varchar(100) DEFAULT NULL,
+  `batchDate` date DEFAULT NULL,
+  `transportOrderNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `userId` varchar(100) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `warrantyManual` int(11) DEFAULT NULL,
+  `sideMirror` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  `toolKit` int(11) DEFAULT NULL,
+  `manual` int(11) DEFAULT NULL,
+  `contactNo` varchar(100) DEFAULT NULL,
+  `vehicleNo` varchar(100) DEFAULT NULL,
+  `driverName` varchar(100) DEFAULT NULL,
+  `helperName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`batchId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `batch`
+--
+
+LOCK TABLES `batch` WRITE;
+/*!40000 ALTER TABLE `batch` DISABLE KEYS */;
+/*!40000 ALTER TABLE `batch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikemodel`
+--
+
+DROP TABLE IF EXISTS `bikemodel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikemodel` (
+  `bikeModelId` varchar(10) NOT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `priceAnnouncementId` varchar(10) DEFAULT NULL,
+  `bikeOption` varchar(100) DEFAULT NULL,
+  `capacity` int(11) DEFAULT NULL,
+  `commision` decimal(10,2) DEFAULT NULL,
+  `netAmount` decimal(10,2) DEFAULT NULL,
+  `note` varchar(200) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  PRIMARY KEY (`bikeModelId`),
+  KEY `priceAnnouncementId` (`priceAnnouncementId`),
+  CONSTRAINT `bikemodel_ibfk_1` FOREIGN KEY (`priceAnnouncementId`) REFERENCES `priceannouncement` (`priceAnnouncementId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikemodel`
+--
+
+LOCK TABLES `bikemodel` WRITE;
+/*!40000 ALTER TABLE `bikemodel` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bikemodel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikeoption`
+--
+
+DROP TABLE IF EXISTS `bikeoption`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikeoption` (
+  `optionId` int(11) NOT NULL AUTO_INCREMENT,
+  `optionName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`optionId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikeoption`
+--
+
+LOCK TABLES `bikeoption` WRITE;
+/*!40000 ALTER TABLE `bikeoption` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bikeoption` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cash`
+--
+
+DROP TABLE IF EXISTS `cash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cash` (
+  `cashId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `cashAmount` decimal(10,0) DEFAULT NULL,
+  `cashDate` date DEFAULT NULL,
+  PRIMARY KEY (`cashId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cash_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cash`
+--
+
+LOCK TABLES `cash` WRITE;
+/*!40000 ALTER TABLE `cash` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cash` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cheque`
+--
+
+DROP TABLE IF EXISTS `cheque`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cheque` (
+  `chequeId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `checkNo` varchar(100) DEFAULT NULL,
+  `bankName` varchar(100) DEFAULT NULL,
+  `chequeDate` date DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `issuedBy` varchar(100) DEFAULT NULL,
+  `chequeType` varchar(100) DEFAULT NULL,
+  `accountNo` varchar(100) DEFAULT NULL,
+  `note` varchar(100) DEFAULT NULL,
+  `isIssued` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`chequeId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cheque_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cheque`
+--
+
+LOCK TABLES `cheque` WRITE;
+/*!40000 ALTER TABLE `cheque` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cheque` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `colour`
+--
+
+DROP TABLE IF EXISTS `colour`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `colour` (
+  `colourId` int(11) NOT NULL AUTO_INCREMENT,
+  `colourName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`colourId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colour`
+--
+
+LOCK TABLES `colour` WRITE;
+/*!40000 ALTER TABLE `colour` DISABLE KEYS */;
+/*!40000 ALTER TABLE `colour` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `consignmentdealer`
+--
+
+DROP TABLE IF EXISTS `consignmentdealer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `consignmentdealer` (
+  `specialDealerId` varchar(10) NOT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `specialPrice` decimal(10,2) DEFAULT NULL,
+  `dealerMargine` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`specialDealerId`),
+  KEY `bikeModelId` (`bikeModelId`),
+  CONSTRAINT `consignmentdealer_ibfk_1` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `consignmentdealer`
+--
+
+LOCK TABLES `consignmentdealer` WRITE;
+/*!40000 ALTER TABLE `consignmentdealer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `consignmentdealer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `customerId` varchar(10) NOT NULL,
+  `customerName` varchar(100) DEFAULT NULL,
+  `nic` varchar(100) DEFAULT NULL,
+  `addressLine1` varchar(100) DEFAULT NULL,
+  `addressLine2` varchar(100) DEFAULT NULL,
+  `addressLine3` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`customerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `homephone`
+--
+
+DROP TABLE IF EXISTS `homephone`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `homephone` (
+  `homePhoneId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `homePhoneNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`homePhoneId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `homephone_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `homephone`
+--
+
+LOCK TABLES `homephone` WRITE;
+/*!40000 ALTER TABLE `homephone` DISABLE KEYS */;
+/*!40000 ALTER TABLE `homephone` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leasing`
+--
+
+DROP TABLE IF EXISTS `leasing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leasing` (
+  `leasingId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `leasingAmount` decimal(10,0) DEFAULT NULL,
+  `mta` int(11) DEFAULT NULL,
+  `mta2` int(11) DEFAULT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `do2` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  `gs` int(11) DEFAULT NULL,
+  `gap` int(11) DEFAULT NULL,
+  `garanter` varchar(300) DEFAULT NULL,
+  `leasingName` varchar(100) DEFAULT NULL,
+  `idPhoto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`leasingId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `leasing_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leasing`
+--
+
+LOCK TABLES `leasing` WRITE;
+/*!40000 ALTER TABLE `leasing` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leasing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mobile`
+--
+
+DROP TABLE IF EXISTS `mobile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mobile` (
+  `mobileId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `mobileNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`mobileId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `mobile_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mobile`
+--
+
+LOCK TABLES `mobile` WRITE;
+/*!40000 ALTER TABLE `mobile` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mobile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model`
+--
+
+DROP TABLE IF EXISTS `model`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model` (
+  `modelId` varchar(10) NOT NULL,
+  `modelName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`modelId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model`
+--
+
+LOCK TABLES `model` WRITE;
+/*!40000 ALTER TABLE `model` DISABLE KEYS */;
+/*!40000 ALTER TABLE `model` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notetableorder`
+--
+
+DROP TABLE IF EXISTS `notetableorder`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `notetableorder` (
+  `orderId` varchar(10) DEFAULT NULL,
+  `noteTableId` int(11) NOT NULL AUTO_INCREMENT,
+  `note` varchar(500) DEFAULT NULL,
+  `isReport` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`noteTableId`),
+  KEY `orderId` (`orderId`),
+  CONSTRAINT `notetableorder_ibfk_1` FOREIGN KEY (`orderId`) REFERENCES `ordertable` (`orderId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notetableorder`
+--
+
+LOCK TABLES `notetableorder` WRITE;
+/*!40000 ALTER TABLE `notetableorder` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notetableorder` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ordertable`
+--
+
+DROP TABLE IF EXISTS `ordertable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ordertable` (
+  `orderId` varchar(10) NOT NULL,
+  `roundNo` varchar(10) DEFAULT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `customerId` varchar(10) DEFAULT NULL,
+  `rmvId` varchar(10) DEFAULT NULL,
+  `userId` varchar(10) DEFAULT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `orderTime` varchar(100) DEFAULT NULL,
+  `orderDate` date DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `rmv` int(11) DEFAULT NULL,
+  `insurance` int(11) DEFAULT NULL,
+  PRIMARY KEY (`orderId`),
+  KEY `roundNo` (`roundNo`),
+  KEY `bikeModelId` (`bikeModelId`),
+  KEY `customerId` (`customerId`),
+  KEY `rmvId` (`rmvId`),
+  KEY `userId` (`userId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `ordertable_ibfk_1` FOREIGN KEY (`roundNo`) REFERENCES `stock` (`roundNo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_2` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_3` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_4` FOREIGN KEY (`rmvId`) REFERENCES `rmv` (`rmvId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_5` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_6` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ordertable`
+--
+
+LOCK TABLES `ordertable` WRITE;
+/*!40000 ALTER TABLE `ordertable` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ordertable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payment` (
+  `paymentId` varchar(10) NOT NULL,
+  `commision` decimal(10,0) DEFAULT NULL,
+  `bikeAmount` decimal(10,0) DEFAULT NULL,
+  `rmvAmount` decimal(10,0) DEFAULT NULL,
+  `insuranceAmount` decimal(10,0) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `otherPaymentAmount` decimal(10,0) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`paymentId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payment`
+--
+
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `priceannouncement`
+--
+
+DROP TABLE IF EXISTS `priceannouncement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `priceannouncement` (
+  `priceAnnouncementId` varchar(10) NOT NULL,
+  `priceAnnouncementDate` date DEFAULT NULL,
+  `effectDate` date DEFAULT NULL,
+  PRIMARY KEY (`priceAnnouncementId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `priceannouncement`
+--
+
+LOCK TABLES `priceannouncement` WRITE;
+/*!40000 ALTER TABLE `priceannouncement` DISABLE KEYS */;
+INSERT INTO `priceannouncement` VALUES ('P001','2016-04-27','2016-04-27');
+/*!40000 ALTER TABLE `priceannouncement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `returnstock`
+--
+
+DROP TABLE IF EXISTS `returnstock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `returnstock` (
+  `returnId` varchar(10) NOT NULL,
+  `roundNo` varchar(10) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `returnDate` date DEFAULT NULL,
+  PRIMARY KEY (`returnId`),
+  KEY `roundNo` (`roundNo`),
+  CONSTRAINT `returnstock_ibfk_1` FOREIGN KEY (`roundNo`) REFERENCES `stock` (`roundNo`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `returnstock`
+--
+
+LOCK TABLES `returnstock` WRITE;
+/*!40000 ALTER TABLE `returnstock` DISABLE KEYS */;
+/*!40000 ALTER TABLE `returnstock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rmv`
+--
+
+DROP TABLE IF EXISTS `rmv`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rmv` (
+  `rmvId` varchar(10) NOT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  `idPhotos` int(11) DEFAULT NULL,
+  `isLeasing` int(11) DEFAULT NULL,
+  PRIMARY KEY (`rmvId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rmv`
+--
+
+LOCK TABLES `rmv` WRITE;
+/*!40000 ALTER TABLE `rmv` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rmv` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stock` (
+  `batchId` varchar(10) DEFAULT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `roundNo` varchar(10) NOT NULL,
+  `engineNo` varchar(100) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `isSold` int(11) DEFAULT NULL,
+  `remark` varchar(300) DEFAULT NULL,
+  `chassisNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `colour` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`roundNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stock`
+--
+
+LOCK TABLES `stock` WRITE;
+/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
+/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `userId` varchar(10) NOT NULL,
+  `userName` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `userType` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('U001','admin','admin','admin');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-04-27 13:17:05

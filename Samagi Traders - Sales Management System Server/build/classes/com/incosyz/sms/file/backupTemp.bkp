@@ -1,0 +1,627 @@
+-- MySQL dump 10.13  Distrib 5.5.27, for Win32 (x86)
+--
+-- Host: localhost    Database: samagi
+-- ------------------------------------------------------
+-- Server version	5.5.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `account` (
+  `accountId` int(11) NOT NULL AUTO_INCREMENT,
+  `accountDate` date DEFAULT NULL,
+  `description` varchar(400) DEFAULT NULL,
+  `income` decimal(10,0) DEFAULT NULL,
+  `expenditure` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`accountId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `account`
+--
+
+LOCK TABLES `account` WRITE;
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `batch`
+--
+
+DROP TABLE IF EXISTS `batch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `batch` (
+  `batchId` varchar(10) NOT NULL,
+  `consignmentNoteNo` varchar(100) DEFAULT NULL,
+  `orderRequestNo` varchar(100) DEFAULT NULL,
+  `transportInvoiceNo` varchar(100) DEFAULT NULL,
+  `batchDate` date DEFAULT NULL,
+  `transportOrderNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `userId` varchar(100) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `warrantyManual` int(11) DEFAULT NULL,
+  `sideMirror` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  `toolKit` int(11) DEFAULT NULL,
+  `manual` int(11) DEFAULT NULL,
+  `contactNo` varchar(100) DEFAULT NULL,
+  `vehicleNo` varchar(100) DEFAULT NULL,
+  `driverName` varchar(100) DEFAULT NULL,
+  `helperName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`batchId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `batch`
+--
+
+LOCK TABLES `batch` WRITE;
+/*!40000 ALTER TABLE `batch` DISABLE KEYS */;
+INSERT INTO `batch` VALUES ('B001','MBDT35331','','980238210','2015-09-22','H52808',NULL,'DINIDUG',1,1,1,1,1,1,'','40-7967','AJITH','ABYESIRI'),('B002','MBDT36822','','980276875','2015-12-08','H55027',NULL,'DINIDUG',3,3,3,3,3,3,'','LM0098','Madusanka','Dayan'),('B003','MBDT35586','','980245416','2015-10-03','H53183',NULL,'DINIDUG',0,1,1,0,1,1,'','LD-4766','MANASINHGE','SARANGA'),('B004','MBDT38039','','980309533','2016-02-20','H57550',NULL,'DINIDUG',16,18,18,16,18,18,'','LM-0432','ROSHAN','JANTH'),('B005','MBDT36997','','980281277','2015-12-16','H55463',NULL,'DINIDUG',1,1,1,1,1,1,'','LM0021','Anura','Aravindha'),('B006','MBDT37237','','980289941','2016-01-02','H56383',NULL,'DINIDUG',1,1,1,1,1,1,'','HH8742','Sarath','Karanarathna '),('B007','MBDT37248','','980289949','2016-01-03','H56391',NULL,'DINIDUG',1,1,1,1,1,1,'','LM0430','Gamlath','Nishantha'),('B008','MBDT37257','','980289998','2016-01-04','H56403',NULL,'DINIDUG',0,1,1,0,1,1,'','LM0098','Madusanka','Waruna'),('B009','MBDT37546','','980297221','2016-01-21','H56974',NULL,'DINIDUG',1,1,1,1,1,1,'','LM0430','Gamlath','Jayantha'),('B010','MBDT37373','','','2016-01-09','',NULL,'BUDDIKA',1,1,1,1,1,1,'','LM0098','Madusanka','Waruna'),('B011','MBDT37657','','980300221','2016-03-03','H57124',NULL,'DINIDUG',4,4,4,4,4,4,'','LM0432','Rosan','Nisantha'),('B012','MBDT37807','','980304367','2016-02-06','H57299',NULL,'DINIDUG',1,1,1,1,1,1,'','LM0430','Gayantha','Jayantha'),('B013','MBDT37893','','980305934','2016-02-11','H57380',NULL,'DINIDUG',3,3,3,3,3,3,'','LD1307','Kapila','Udara'),('B014','MBDT35545','','980245092','2015-10-01','H53137',NULL,'DINIDUG',1,1,1,1,1,1,'','LC-6191','SISIRA','NANAJ'),('B015','MBDT36553','','980266739','2015-11-23','H54456',NULL,'DINIDUG',1,1,1,1,1,1,'','LM-9096','NILANTHA','SUNIL'),('B017','MBDT36099','','980258513','2015-11-03','H53878',NULL,'DINIDUG',1,1,1,1,1,1,'','LI-4764','JAYASINGHE','JAYAMPATHI'),('B018','MBDT37453','','980295450','2016-01-14','H56853',NULL,'DINIDUG',7,9,9,7,9,9,'','LM-0436','GUNARATHA','JAYANTHA'),('B019','MBDT36355','','980262825','2015-11-14','H54177',NULL,'DINDUG',1,1,1,1,1,1,'','LI-4796','SUDATH','NUWAN'),('B020','MBDT38273','','980315480','2016-03-05','H57793',NULL,'DINIDUG',22,22,22,22,22,22,'','CM1224','DUMINDA','SAMPATH'),('B021','MBDT38319','','980315957','2016-03-08','H57851',NULL,'DINIDUG',7,7,7,7,7,7,'','LI-0430','KAPILA','UDARA'),('B022','MBDT38319','','980315957','2016-03-08','H57851',NULL,'DINIDUD',7,7,7,7,7,7,'','LI-0430','KAPILA','UDARA'),('B023','MBDT38451','','980317968','2016-03-15','H57997',NULL,'DINIGUN',10,10,10,10,10,10,'','LI-4766','SUDATH','SAMAN'),('B024','MBDT38642','','980321695','2016-03-28','H58199',NULL,'DINIDUG',7,7,7,7,7,7,'','LI 4764','',''),('B025','MBDT38609','','980321435','2016-03-26','H58167',NULL,'DINIDUG',18,18,18,18,18,18,'','LM0432','ROSHAN','JAYANTHA'),('B026','mbdt38733','','980325751','2016-04-01','h58299',NULL,'DINIDUG',18,18,18,18,18,18,'','JB-7345','',''),('B027','MBDT38790','','980326231','2016-04-04','H58364',NULL,'DINUDUG',7,7,7,7,7,7,'','JB7345','DIYAGAN','SUDA');
+/*!40000 ALTER TABLE `batch` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikemodel`
+--
+
+DROP TABLE IF EXISTS `bikemodel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikemodel` (
+  `bikeModelId` varchar(10) NOT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `priceAnnouncementId` varchar(10) DEFAULT NULL,
+  `bikeOption` varchar(100) DEFAULT NULL,
+  `capacity` int(11) DEFAULT NULL,
+  `commision` decimal(10,2) DEFAULT NULL,
+  `netAmount` decimal(10,2) DEFAULT NULL,
+  `note` varchar(200) DEFAULT NULL,
+  `helmet` int(11) DEFAULT NULL,
+  `jacket` int(11) DEFAULT NULL,
+  PRIMARY KEY (`bikeModelId`),
+  KEY `priceAnnouncementId` (`priceAnnouncementId`),
+  CONSTRAINT `bikemodel_ibfk_1` FOREIGN KEY (`priceAnnouncementId`) REFERENCES `priceannouncement` (`priceAnnouncementId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikemodel`
+--
+
+LOCK TABLES `bikemodel` WRITE;
+/*!40000 ALTER TABLE `bikemodel` DISABLE KEYS */;
+INSERT INTO `bikemodel` VALUES ('B001','M001','P001','MOPED ',70,4250.00,107900.00,NULL,1,1),('B002','M002','P001','ES ',90,6250.00,197900.00,NULL,1,1),('B003','M003','P001','ES ',90,6250.00,199900.00,NULL,0,0),('B004','M004','P001','ES + DRUM BRAKE ',110,6750.00,206900.00,NULL,0,0),('B005','M005','P001','ES + DISK BRAKE ',110,6750.00,222000.00,NULL,1,1),('B006','M006','P001','ES + DIGITAL METER + DRUM BRAKE ',110,6750.00,224900.00,NULL,1,1),('B007','M007','P001','ES/KS + BLACK ALLOY WHEEL + DRUM BRAKE ',110,6750.00,230000.00,NULL,1,1),('B008','M008','P001','ES + CCTI ENGINE + TUBE LESS TYRE ',110,6750.00,210900.00,NULL,1,1),('B009','M009','P001','MAG + DRUM BRAKE + ES ',100,5250.00,162900.00,NULL,1,1),('B010','M016','P001','ES + ECO TRUST ENGINE  + DIGITAL METER + BLACK ALLOY WHEEL ',110,5250.00,205900.00,NULL,1,1),('B011','M011','P001','ES + BLACK ALLOY WHEEL + DIGITAL METER + DISC BRAKE ',125,6000.00,221000.00,NULL,1,1),('B012','M012','P001','ES + MAG + DISK BRAKE  + DIGITAL METER ',150,7000.00,259900.00,NULL,1,1),('B013','M013','P001','ES + MAG + DOUBLE DISC + DIGITAL METER ',180,7250.00,289900.00,NULL,1,1),('B014','M014','P001',' + ES + MAG + DISC BRAKE + DIGITAL METER ',150,7000.00,310900.00,NULL,1,1),('B015','M015','P001','ES + MAG + DOUBLE DISC + DIGITAL METER ',180,7250.00,359900.00,NULL,1,1),('B016','M001','P002','MOPED + 2 STORKE ',70,4250.00,109900.00,NULL,1,1);
+/*!40000 ALTER TABLE `bikemodel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bikeoption`
+--
+
+DROP TABLE IF EXISTS `bikeoption`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bikeoption` (
+  `optionId` int(11) NOT NULL AUTO_INCREMENT,
+  `optionName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`optionId`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bikeoption`
+--
+
+LOCK TABLES `bikeoption` WRITE;
+/*!40000 ALTER TABLE `bikeoption` DISABLE KEYS */;
+INSERT INTO `bikeoption` VALUES (1,'ES'),(7,'MOPED'),(8,'DRUM BRAKE'),(9,'DISK BRAKE'),(10,'DIGITAL METER'),(11,'BLACK ALLOY WHEEL'),(12,'MAG'),(14,'DOUBLE DISC'),(15,'CCTI ENGINE'),(16,'ECO TRUST ENGINE'),(17,'2 STOKER');
+/*!40000 ALTER TABLE `bikeoption` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cash`
+--
+
+DROP TABLE IF EXISTS `cash`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cash` (
+  `cashId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `cashAmount` decimal(10,0) DEFAULT NULL,
+  `cashDate` date DEFAULT NULL,
+  PRIMARY KEY (`cashId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cash_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cash`
+--
+
+LOCK TABLES `cash` WRITE;
+/*!40000 ALTER TABLE `cash` DISABLE KEYS */;
+INSERT INTO `cash` VALUES ('C001','P001',73000,'2016-02-26'),('C002','P002',180000,'2016-02-26'),('C003','P003',31000,'2016-03-02'),('C004','P004',231000,'2016-03-02'),('C005','P005',177000,'2016-03-02'),('C006','P006',70000,'2016-03-02'),('C007','P007',140000,'2016-03-02'),('C008','P008',96400,'2016-03-02'),('C009','P009',50000,'2016-03-02'),('C010','P010',83000,'2016-03-03'),('C011','P011',232000,'2016-03-03'),('C012','P012',99000,'2016-03-03'),('C013','P013',231000,'2016-03-03'),('C014','P014',231000,'2016-03-08'),('C015','P015',64400,'2016-03-08'),('C016','P016',200000,'2016-03-08'),('C017','P017',232000,'2016-03-08'),('C018','P018',172000,'2016-03-08'),('C019','P020',102000,'2016-03-15'),('C020','P021',232000,'2016-03-15'),('C021','P023',231000,'2016-03-15'),('C022','P024',100000,'2016-03-15'),('C023','P025',232000,'2016-03-15'),('C024','P026',170000,'2016-03-17'),('C025','P027',175000,'2016-03-17'),('C026','P028',231000,'2016-03-17'),('C027','P029',142500,'2016-03-17'),('C028','P030',230500,'2016-03-17'),('C029','P031',7100,'2016-03-17'),('C030','P034',100000,'2016-03-17'),('C031','P035',125000,'2016-03-17'),('C032','P036',182000,'2016-03-25'),('C033','P037',230000,'2016-03-25'),('C034','P038',72000,'2016-03-25'),('C035','P039',231000,'2016-03-25'),('C036','P040',232000,'2016-03-25'),('C037','P042',152000,'2016-04-02'),('C038','P043',230000,'2016-04-02'),('C039','P009',52000,'2016-04-02'),('C040','P044',7000,'2016-04-02'),('C041','P045',7000,'2016-03-30'),('C042','P046',83000,'2016-03-30'),('C043','P047',105000,'2016-03-30'),('C044','P048',105000,'2016-03-30'),('C045','P049',85500,'2016-03-30'),('C046','P050',73000,'2016-03-30'),('C047','P051',73000,'2016-03-30'),('C048','P052',140000,'2016-03-30'),('C049','P053',182000,'2016-03-30'),('C050','P054',110000,'2016-03-30'),('C051','P055',73000,'2016-03-30'),('C052','P056',73000,'2016-03-30'),('C053','P057',73000,'2016-03-30'),('C054','P058',72500,'2016-03-30'),('C055','P059',63450,'2016-03-30'),('C056','P060',90000,'2016-03-30'),('C057','P061',73000,'2016-03-30'),('C058','P062',100000,'2016-03-30'),('C059','P063',100000,'2016-03-30'),('C060','P064',224500,'2016-03-30'),('C061','P065',138900,'2016-03-30'),('C062','P066',138900,'2016-03-30'),('C063','P067',150000,'2016-03-30'),('C064','P069',232000,'2016-03-30');
+/*!40000 ALTER TABLE `cash` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cheque`
+--
+
+DROP TABLE IF EXISTS `cheque`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cheque` (
+  `chequeId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `checkNo` varchar(100) DEFAULT NULL,
+  `bankName` varchar(100) DEFAULT NULL,
+  `chequeDate` date DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `issuedBy` varchar(100) DEFAULT NULL,
+  `chequeType` varchar(100) DEFAULT NULL,
+  `accountNo` varchar(100) DEFAULT NULL,
+  `note` varchar(100) DEFAULT NULL,
+  `isIssued` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`chequeId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `cheque_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cheque`
+--
+
+LOCK TABLES `cheque` WRITE;
+/*!40000 ALTER TABLE `cheque` DISABLE KEYS */;
+INSERT INTO `cheque` VALUES ('C001','P002','747002','Hatton National Bank PLC','2016-03-22',30000,'','M.I.M. ISHFAK',NULL,NULL,NULL,'0'),('C002','P002','747003','Hatton National Bank PLC','2016-04-15',30500,'','M.I.M. ISHFAK',NULL,NULL,NULL,'0'),('C003','P003','178056','Commercial Bank of Ceylon PLC','2016-03-01',200000,'','M.S. MOHAMED OSMAN',NULL,NULL,NULL,'0'),('C004','P005','447086','Commercial Bank of Ceylon PLC','2016-03-25',30000,'','M.S. MOHAMED ZIYARD',NULL,NULL,NULL,'0'),('C005','P005','447085','Commercial Bank of Ceylon PLC','2016-04-15',25000,'','M.S. MOHAMED ZIYARD',NULL,NULL,NULL,'0'),('C006','P008','000666','People\'s Bank','2016-04-20',135600,'','M.H. MOHAMED HASSAN',NULL,NULL,NULL,'0'),('C007','P009','130000','Nations Trust Bank PLC','2016-03-11',130000,'','M.H. MOHAMED NAIZAR',NULL,NULL,NULL,'0'),('C008','P012','183175','Nations Trust Bank PLC','2016-02-29',131000,'','M.M. MOHAMED',NULL,NULL,NULL,'0'),('C009','P016','32000','Hatton National Bank PLC','2016-03-21',32000,'','M. MIHRAJ',NULL,NULL,NULL,'0'),('C010','P018','500214','Commercial Bank of Ceylon PLC','2016-04-25',60000,'','M.R. MOHAMED AROOS',NULL,NULL,NULL,'0'),('C011','P020','995473','Commercial Bank of Ceylon PLC','2016-03-23',65000,'','M.M Mohamed Ifthikar',NULL,NULL,NULL,'0'),('C012','P020','995474','Commercial Bank of Ceylon PLC','2016-04-10',65000,'','M.M Mohamed Ifthikar',NULL,NULL,NULL,'0'),('C013','P022','988951','Amana Bank PLC','2016-03-18',132000,'','M.S Mohamed Hasany',NULL,NULL,NULL,'0'),('C014','P022','685030','Commercial Bank of Ceylon PLC','2016-03-20',100000,'','M.S Mohamed Hasany',NULL,NULL,NULL,'0'),('C015','P024','165574','Commercial Bank of Ceylon PLC','2016-04-04',132000,'','M.Z.M.Harris',NULL,NULL,NULL,'0'),('C016','P026','179552','Sampath Bank PLC','2016-04-12',62000,'','M.H.M MOHOMAD ISHAK',NULL,NULL,NULL,'0'),('C017','P029','893250','Hatton National Bank PLC','2016-04-08',75000,'','M.N MOHAMED NAFAIZ',NULL,NULL,NULL,'0'),('C018','P029','062416','Hatton National Bank PLC','2016-03-16',14500,'','M.N MOHAMED NAFAIZ',NULL,NULL,NULL,'0'),('C019','P032','134386','Hatton National Bank PLC','2016-03-18',80000,'','M.S.A MOHAMED FASLUL',NULL,NULL,NULL,'0'),('C020','P032','134387','Hatton National Bank PLC','2016-03-19',86000,'','M.S.A MOHAMED FASLUL',NULL,NULL,NULL,'0'),('C021','P032','259143','Amana Bank PLC','2016-04-03',22000,'','M.S.A MOHAMED FASLUL',NULL,NULL,NULL,'0'),('C022','P032','259144','Amana Bank PLC','2016-04-23',22000,'','M.S.A MOHAMED FASLUL',NULL,NULL,NULL,'0'),('C023','P032','259145','Amana Bank PLC','2016-05-03',22000,'','M.S.A MOHAMED FASLUL',NULL,NULL,NULL,'0'),('C024','P033','182724','Sampath Bank PLC','2016-03-18',57500,'','M.N.MOHOMAD DASTHAKEER',NULL,NULL,NULL,'0'),('C025','P033','182727','Sampath Bank PLC','2016-03-21',57500,'','M.N.MOHOMAD DASTHAKEER',NULL,NULL,NULL,'0'),('C026','P033','182719','Sampath Bank PLC','2016-03-28',39000,'','M.N.MOHOMAD DASTHAKEER',NULL,NULL,NULL,'0'),('C027','P033','182722','Sampath Bank PLC','2016-04-11',39000,'','M.N.MOHOMAD DASTHAKEER',NULL,NULL,NULL,'0'),('C028','P033','182723','Sampath Bank PLC','2016-04-25',39000,'','M.N.MOHOMAD DASTHAKEER',NULL,NULL,NULL,'0'),('C029','P034','183413','Commercial Bank of Ceylon PLC','2016-03-31',65000,'','M.N.MOHAMED INSAF',NULL,NULL,NULL,'0'),('C030','P035','509085','Commercial Bank of Ceylon PLC','2016-04-10',50000,'','M.F.FASLU RAHAMAN',NULL,NULL,NULL,'0'),('C031','P035','509086','Commercial Bank of Ceylon PLC','2016-04-30',57000,'','M.F.FASLU RAHAMAN',NULL,NULL,NULL,'0'),('C032','P042','039115','Commercial Bank of Ceylon PLC','2016-04-23',50000,'','M.C. MOHAMED RIYAL',NULL,NULL,NULL,'0'),('C033','P042','039116','Commercial Bank of Ceylon PLC','2016-04-12',30000,'','M.C. MOHAMED RIYAL',NULL,NULL,NULL,'0'),('C034','P068','145939','Commercial Bank of Ceylon PLC','2016-03-20',240500,'','M.SADHAK FOWSY',NULL,NULL,NULL,'0');
+/*!40000 ALTER TABLE `cheque` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `colour`
+--
+
+DROP TABLE IF EXISTS `colour`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `colour` (
+  `colourId` int(11) NOT NULL AUTO_INCREMENT,
+  `colourName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`colourId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colour`
+--
+
+LOCK TABLES `colour` WRITE;
+/*!40000 ALTER TABLE `colour` DISABLE KEYS */;
+INSERT INTO `colour` VALUES (1,'RED'),(2,'BLACK'),(3,'BLACKWHITE'),(4,'WHITE'),(5,'TIT GREY'),(6,'BLACK/RED'),(7,'WHITE/BLACK'),(8,'BLACK/GREEN'),(9,'GREEN'),(10,'BLUE');
+/*!40000 ALTER TABLE `colour` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `consignmentdealer`
+--
+
+DROP TABLE IF EXISTS `consignmentdealer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `consignmentdealer` (
+  `specialDealerId` varchar(10) NOT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `specialPrice` decimal(10,2) DEFAULT NULL,
+  `dealerMargine` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`specialDealerId`),
+  KEY `bikeModelId` (`bikeModelId`),
+  CONSTRAINT `consignmentdealer_ibfk_1` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `consignmentdealer`
+--
+
+LOCK TABLES `consignmentdealer` WRITE;
+/*!40000 ALTER TABLE `consignmentdealer` DISABLE KEYS */;
+INSERT INTO `consignmentdealer` VALUES ('D001','B002',190400.00,5000.00),('D002','B003',192400.00,5000.00),('D003','B004',199400.00,5400.00),('D004','B006',217400.00,5400.00),('D005','B007',222500.00,5400.00),('D006','B014',303400.00,5600.00);
+/*!40000 ALTER TABLE `consignmentdealer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `customerId` varchar(10) NOT NULL,
+  `customerName` varchar(100) DEFAULT NULL,
+  `nic` varchar(100) DEFAULT NULL,
+  `addressLine1` varchar(100) DEFAULT NULL,
+  `addressLine2` varchar(100) DEFAULT NULL,
+  `addressLine3` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`customerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES ('C001','M.M. MOHAMED RAMSI','801320198V','NO: 94,NALEEM HAJJIAR MW','DEENAGODA,','BERUWALA'),('C002','M.I.M. ISHFAK','860341212V','NO:10,YUSUF MAWATHA','CHINA FORT','BERUWALA'),('C003','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C004','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C005','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C006','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C007','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C008','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C009','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C010','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C011','M.S. MOHAMED OSMAN','611791836V','NO:32,BUHARY THAKKIYA ROAD ','MARADANA','BERUWALA'),('C012','M.S. MOHAMED OSMAN','611791836V','NO:32, ','BUHARY THAKKIYA ROAD,','MARADANA, BERUWALA'),('C013','M. MOHAMED ASKAR','783301652V','NO:15/4/A,STADIYAM RD,','CHINA FORT, ','BERUWALA'),('C014','M.S. MOHAMED ZIYARD','761913727V','IQRA TECHNICAL ROAD,','AMBEPITIYA,','BERUWALA'),('C015','C.W. PRIYANTHA','692340760V','NO:282/2, ','ARAKAGODA,','MILLANIYA'),('C016','M.S. MOHAMED SIJAD','961760640V','NO:78,','MARADANA,','BERUWALA'),('C017','M.H. MOHAMED HASSAN','883310438V','NO:43, ZAVIYA ROAD,','MAHAGODA,','BERUWALA'),('C018','M.H. MOHAMED NAIZAR','711381295V','NO:48/04, OLD ROAD. ','MOLLIYAMALY','BERUWALA'),('C019','CHAMILA PUSHPSKUMARA','','NO:116/6 ','KADIYAWATTA ROAD','DARGA TOWN'),('C020','M. MASHEESH SHIHAN','781910520V','NO:21/A, YOSUF MW, CHINA FORT ','BERUWALA',''),('C021','M.M. MOHAMED','','NO:44/4, DR. SHIEK ALFASSY MW,','CHINA FORT','BERUWALA'),('C022','M.A.MOHAMED FAZIL','752521891V','NO:280/5, MAIN STREET','DARGA TOWN',''),('C023','M.S. MOHAMED MUDASSIR','843221947V','NO: 27/1, OLD ROAD,','MAHAGODA,','BERUWALA.'),('C024','M.U. MOHAMED HILMI','662632465V','NO:50,','ARIYAWANSHA MAWATHA,','BERUWALA'),('C025','M. MIHRAJ','','NO:35/9,','ARIYAWANSHA MAWATHA','BERUWALA'),('C026','M.H MOHAMED MUSTHAK','','NO 38,ST. ANNE RD,','CHAINA FORT,','BERUWALA'),('C027','M.R. MOHAMED AROOS','','NO:53/1,','MOSQUE ROAD,','BERUWALA'),('C028','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C029','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C030','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C031','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C032','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C033','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C034','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C035','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopiwatta,','Walipanna.'),('C036','A.W.A Udeshika Ashani','916511493V','Hollnbon,','Kopawatta,','Walipanna.'),('C037','M.M Mohamed Ifthikar','','No 76, Madukara watta,','Ambepitiya,','Beruwala.'),('C038','M.A.Muhamed Safwan','870052405V','No 12/B','Nalleem Hajjiar MW','Beruwala.'),('C039','M.S Mohamed Hasany','741351773V','No 17/1,Circular Rd,','China Fort,','Beruwala.'),('C040','Y.Aruna Kulasekara','672833086V','\"Kumudu\",','Kommala,','Bentota.'),('C041','M.Z.M.Harris','642551477V','NO 39,YOUSUF AVENUE,','CHINA FORT,','BERUWALA.'),('C042','M.S.MOHAMED HASIR','871371563V','NO 70/C 6/1.KOVILA WATTA,','AMBEPITIYA,','BERUWALA.'),('C043','M.H.M MOHOMAD ISHAK','8514834389V','NO 12/1,','DEENAGODA,','BERUWALA.'),('C044','G.T LAKSHMI PRYANGIKA','867380183V','MAHAGEDARA WATTA,','MALAWANGODA,','DHARGA TOWN.'),('C045','M.F MOHAMED FASHAN.','900231520V','NO 75, NALEEM HAJJIAR MAWATHA, ','CHINA FORT,','BERUWALA.'),('C046','M.N MOHAMED NAFAIZ','702563569V','NO 19,','DEENAGODA,','BERUWALA.'),('C047','M.C MOHAMED MURSHID','810421630X','NO 181,','MIHIRIPANNA RD,','DHARGA TOWN.'),('C048','M.W MOHAMED FAHMY','','NO 36,','CHINA FORT,','BERUWALA.'),('C049','M.S.A MOHAMED FASLUL','631440312V','NO 54,','YON STREET,','KALUTARA SOUTH.'),('C050','M.N.MOHOMAD DASTHAKEER','921010389V','134/14,','OLD RD,','BERUWALA.'),('C051','M.N.MOHAMED INSAF','','NO 39, SHANADULIYA RD,','DEENAGODA,','BERUWALA.'),('C052','M.F.FASLU RAHAMAN','893281312V','NO;89/1,NASIM MAWATHA,','DARGA TOWN,','ALUTHGAMA'),('C053','A.H MOHANED SIYAM','841702727V','NO 257/1,OLD ROAD,','MAHAGODA,','BERUWALA.'),('C054','M.HUSSAIN M FARHAN','903264098V','NO 173/4,NOWFER MW,','PITAWALA,','BERUWALA.'),('C055','M.N MOHAMED FAIROOS','852000406V','NO 6/A,','PALACE PATH,','BERUWALA.'),('C056','M.F MOHAMED FARHATH','901712719V','NO 47/3 J,DHARGA RD,','CHINA FORT,','BERUWALA.'),('C057','M.T MOHAMED MUSNI','572580466V','NO 38, DHARGA RD,','DEENAGODA,','BERUWALA.'),('C058','M.R ABDUL BASITH','940500761V','NO 29/B,','CHINA FORT,','BERUWALA.'),('C059','M.C. MOHAMED RIYAL','','NO:176/C/2, DELAHITIYA WATTA,','KOTHVILA ROAD,','EHELIYAGODA.'),('C060','M.F. MOHAMED IJLAN','891760663V','NO:62, ','MOSQUE LANE,','BERUWALA.'),('C061','RAMESH DE SILVA','960232875V','NO:80, ','SRI LANKAN POLICE QUATERS','KALUTHARA SOUTH'),('C062','RAMESH DE SILVA','960232875V','NO:80, POLICE COLLEGE QUATERS,','KALUTHARA SOUTH',''),('C063','CHAMILA PUSHPAKUMARA','','NO 116/6,','KADIYA WATTA RD,','DHARGA TOWN.'),('C064','M.Z MOHOMED MILHAN','722071778V','NO 5B,JABEIR MAWATHA,','CHINA FORT,','BERUWALA.'),('C065','M.Z MOHOMED MILHAN','722071778V','NO 5B,JABEIR MAWATHA,','CHINA FORT,','BERUWALA.'),('C066','M.U. MOHAMED HILMI','662632465V','NO:50,','ARIYAWANSHA MAWATHA,','BERUWALA'),('C067','M.S MOHAMED SAFRAS','911353334V','NO 85/6,','CHURCH RD,','BERUWALA.'),('C068','A.U MOHAMED ASAR','0771750485','NO 24/2 C,SHEAK MAWATHA,','CHINA FORT,','BERUWALA.'),('C069','M.L MOHAMED RISVAN','801533094V','NO 17,GABADAGODA,','MARADANA,','BERUWALA.'),('C070','M.H MOHAMED IRHAM','880172689V','NO 259,','SHEAK IEMALDEEN RD,','MAHAGODA.'),('C071','A.H FATHUMA FARDIYA','845531323V','NO 50,','SAMED MW,','BERUWALA.'),('C072','M.P MOHAMED ASHEN','961691141V','NO 93,','MARADANA,','BERUWALA.'),('C073','M.S RILA SHAFI','752281068V','NO 75/1 A,HASHAM VILLA,','MALWATTA RD,','DEHIWALA.'),('C074','S.L MOHAMED SAFRAN','861262073V','NO 55/42 D,','MARAKKALA WATTA,','BERUWALA.'),('C075','M.M MOHAMED HARIS','751100990V','NO39/2,ZAVIYA LANE,','MAHAGODA,','BERUWALA.'),('C076','P.MOHAMED AMAN','','NO 71/2,SAMADI MW,','MASSALA,','BERUWALA.'),('C077','A.J FATHIMA MUPLIHA','927930811V','SRI SUMANAGALA MW,','KURALAPITIYA,','BERUWALA.'),('C078','M.F MOHAMED FASLAN','','NO 18,','BAKEER MARCKER MW,','BERUWALA.'),('C079','M.P MOHAMED FARNAS','950903830V','NO 61,','MOSQUE RD,','BERUWALA.'),('C080','M.I MOHAMED MIFRATH','970753508V','NO 294,','EGODAWATTA,BERUWALA.',''),('C081','Y.ARUNA KULASEKARA','672833086V','\"KUMUDU\"','KOMMALA,','BENTOTA'),('C082','K.N. MALINDA DE SILVA','922680930V','\"KANTHI\"','MULLAPITIYA,','BERUWALA.'),('C083','K.N. MALINDA DE SILVA','922680930V','\"KANTHI\"','MULLAPITIYA,','BERUWALA.'),('C084','M.R. MOHAMED RIFAS','923062955V','NO:79, HIJAR MW,','AMBEPITIYA,','BERUWALA'),('C085','M.SADHAK FOWSY','770980542V','NO:19, EGODA WATTA ROAD,','CHINA FORT,','BERUWALA'),('C086','M.S. MOHAMED ASHRAK','843521320V','NO:31, SADRALIYA ROAD,','CHINA FORT,','BERUWALA');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `homephone`
+--
+
+DROP TABLE IF EXISTS `homephone`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `homephone` (
+  `homePhoneId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `homePhoneNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`homePhoneId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `homephone_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `homephone`
+--
+
+LOCK TABLES `homephone` WRITE;
+/*!40000 ALTER TABLE `homephone` DISABLE KEYS */;
+/*!40000 ALTER TABLE `homephone` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leasing`
+--
+
+DROP TABLE IF EXISTS `leasing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leasing` (
+  `leasingId` varchar(10) NOT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `leasingAmount` decimal(10,0) DEFAULT NULL,
+  `mta` int(11) DEFAULT NULL,
+  `mta2` int(11) DEFAULT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `do2` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  `gs` int(11) DEFAULT NULL,
+  `gap` int(11) DEFAULT NULL,
+  `garanter` varchar(300) DEFAULT NULL,
+  `leasingName` varchar(100) DEFAULT NULL,
+  `idPhoto` int(11) DEFAULT NULL,
+  `snCharge` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`leasingId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `leasing_ibfk_1` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leasing`
+--
+
+LOCK TABLES `leasing` WRITE;
+/*!40000 ALTER TABLE `leasing` DISABLE KEYS */;
+INSERT INTO `leasing` VALUES ('L001','P001',170000,1,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L002','P010',151000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'0'),('L003','P044',162900,0,0,0,0,0,0,0,0,'','SN Leasing',0,'0'),('L004','P046',159600,0,0,0,0,0,0,0,0,'','SN Leasing',0,'8600'),('L005','P049',156525,0,0,0,0,0,0,0,0,'','SN Leasing',0,'8025'),('L006','P050',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L007','P051',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L008','P052',99500,0,0,0,0,0,0,0,0,'','SN Leasing',0,'5500'),('L009','P053',55270,0,0,0,0,0,0,0,0,'','SN Leasing',0,'3270'),('L010','P054',131000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'7000'),('L011','P055',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L012','P056',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L013','P057',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L014','P058',170000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L015','P059',57000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'3450'),('L016','P060',30200,0,0,0,0,0,0,0,0,'','SN Leasing',0,'2000'),('L017','P061',169200,0,0,0,0,0,0,0,0,'','SN Leasing',0,'9000'),('L018','P062',140825,0,0,0,0,0,0,0,0,'','SN Leasing',0,'7625'),('L019','P063',140825,0,0,0,0,0,0,0,0,'','SN Leasing',0,'7625'),('L020','P065',100600,0,0,0,0,0,0,0,0,'','SN Leasing',0,'5500'),('L021','P066',100000,0,0,0,0,0,0,0,0,'','SN Leasing',0,'5500'),('L022','P067',88970,0,0,0,0,0,0,0,0,'','SN Leasing',0,'4970');
+/*!40000 ALTER TABLE `leasing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mobile`
+--
+
+DROP TABLE IF EXISTS `mobile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mobile` (
+  `mobileId` int(11) NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(10) DEFAULT NULL,
+  `mobileNo` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`mobileId`),
+  KEY `customerId` (`customerId`),
+  CONSTRAINT `mobile_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mobile`
+--
+
+LOCK TABLES `mobile` WRITE;
+/*!40000 ALTER TABLE `mobile` DISABLE KEYS */;
+INSERT INTO `mobile` VALUES (1,'C001','0778822193'),(2,'C002','0775052400'),(3,'C003','0777346904'),(4,'C004','0777346904'),(5,'C005','0777346904'),(6,'C006','0777346904'),(7,'C007','0777346904'),(8,'C008','0777346904'),(9,'C009','0777346904'),(10,'C010','0777346904'),(11,'C011','0777346904'),(12,'C012','0777346904'),(13,'C013','0778549464'),(14,'C014','761913727V'),(15,'C015','0776123948'),(16,'C016','0775077402'),(17,'C017','0342276061'),(18,'C018','0773626518'),(19,'C020','0771593881'),(20,'C021','0775536077'),(21,'C022','0773996011'),(22,'C023','0775489985'),(23,'C024','0773492351'),(24,'C025','0777035361'),(25,'C026','0769954145'),(26,'C027','0772659668'),(27,'C028','0776633586'),(28,'C029','0776633586'),(29,'C030','0776633586'),(30,'C031','0776633586'),(31,'C032','0776633586'),(32,'C033','0776633586'),(33,'C034','0776633586'),(34,'C035','0776633586'),(35,'C036','0776633586'),(36,'C037','0773832401'),(37,'C038','0777064715'),(38,'C039','0773509120'),(39,'C040','0773509120'),(40,'C041','0772544370'),(41,'C042','0777476632'),(42,'C043','0777877076'),(43,'C044','077639566'),(44,'C045','0772029112'),(45,'C048','0773615994'),(46,'C049','0772016430'),(47,'C050','0777750801'),(48,'C051','0772009520'),(49,'C052','0775758606'),(50,'C053','0773910615'),(51,'C054','0766629188'),(52,'C055','0757878462'),(53,'C056','0719152050'),(54,'C057','0777655812'),(55,'C058','0775019126'),(56,'C060','0777489550'),(57,'C061','0714692667'),(58,'C062','0714698667'),(59,'C063','0342270821'),(60,'C064','0777762800'),(61,'C065','0777762800'),(62,'C066','0773492351'),(63,'C067','0723198448'),(64,'C068','0771750485'),(65,'C069','0775333725'),(66,'C071','0775565946'),(67,'C072','0779801962'),(68,'C073','0775664567'),(69,'C074','0768647308'),(70,'C075','0772969162'),(71,'C077','0771338092'),(72,'C078','0757855467'),(73,'C079','0757236293'),(74,'C080','0777189852'),(75,'C081','0718627978'),(76,'C082','0779309293'),(77,'C083','0779309293'),(78,'C084','0766020697'),(79,'C085','0777445889'),(80,'C086','0775597250');
+/*!40000 ALTER TABLE `mobile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `model`
+--
+
+DROP TABLE IF EXISTS `model`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model` (
+  `modelId` varchar(10) NOT NULL,
+  `modelName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`modelId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `model`
+--
+
+LOCK TABLES `model` WRITE;
+/*!40000 ALTER TABLE `model` DISABLE KEYS */;
+INSERT INTO `model` VALUES ('M001','XL SUPER HD'),('M002','SCOOTY PEP PLUS'),('M003','SCOOTY STREAK'),('M004','WEGO DURM'),('M005','WEGO DISK 110CC'),('M006','WEGO (REFRESH)'),('M007','JUPITER 110 MW'),('M008','ZEST'),('M009','METRO ES'),('M011','PHOENIX 125CC MW'),('M012','APACHE RTR 150'),('M013','APACHE RTR180'),('M014','APACHE RTR150 (REFRSH)'),('M015','APACHE RTR 180 (REFRESH)'),('M016','METRO PLUS');
+/*!40000 ALTER TABLE `model` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ordertable`
+--
+
+DROP TABLE IF EXISTS `ordertable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ordertable` (
+  `orderId` varchar(10) NOT NULL,
+  `roundNo` varchar(10) DEFAULT NULL,
+  `bikeModelId` varchar(10) DEFAULT NULL,
+  `customerId` varchar(10) DEFAULT NULL,
+  `rmvId` varchar(10) DEFAULT NULL,
+  `userId` varchar(10) DEFAULT NULL,
+  `paymentId` varchar(10) DEFAULT NULL,
+  `orderTime` varchar(100) DEFAULT NULL,
+  `orderDate` date DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `rmv` int(11) DEFAULT NULL,
+  `insurance` int(11) DEFAULT NULL,
+  PRIMARY KEY (`orderId`),
+  KEY `roundNo` (`roundNo`),
+  KEY `bikeModelId` (`bikeModelId`),
+  KEY `customerId` (`customerId`),
+  KEY `rmvId` (`rmvId`),
+  KEY `userId` (`userId`),
+  KEY `paymentId` (`paymentId`),
+  CONSTRAINT `ordertable_ibfk_1` FOREIGN KEY (`roundNo`) REFERENCES `stock` (`roundNo`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_2` FOREIGN KEY (`bikeModelId`) REFERENCES `bikemodel` (`bikeModelId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_3` FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_4` FOREIGN KEY (`rmvId`) REFERENCES `rmv` (`rmvId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_5` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordertable_ibfk_6` FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ordertable`
+--
+
+LOCK TABLES `ordertable` WRITE;
+/*!40000 ALTER TABLE `ordertable` DISABLE KEYS */;
+INSERT INTO `ordertable` VALUES ('O001','3188/19','B006','C001','R001','U001','P001','05:46:39','2016-02-26','',234000,1,1),('O002','3176/28','B006','C002','R002','U001','P002','06:07:17','2016-02-26','',240500,1,1),('O003','3176/13','B006','C012','R003','U001','P003','04:56:41','2016-03-02','',231000,1,1),('O004','3176/1','B006','C013','R004','U001','P004','05:40:37','2016-03-02','',231000,1,1),('O005','3168/46','B006','C014','R005','U001','P005','05:45:07','2016-03-02','',232000,1,1),('O007','3141/53','B006','C016','R007','U001','P007','05:50:22','2016-03-02','',232000,1,1),('O008','3185/139','B006','C017','R008','U001','P008','05:53:59','2016-03-02','',232000,1,1),('O009','3141/31','B006','C018','R009','U001','P009','05:56:26','2016-03-02','',232000,1,1),('O011','3053/10','B006','C020','R011','U001','P011','04:21:29','2016-03-03','',232000,1,1),('O012','3187/56','B006','C021','R012','U001','P012','04:30:22','2016-03-03','',230000,1,1),('O013','3175/69','B006','C022','R013','U001','P013','04:48:42','2016-03-03','',231000,1,1),('O014','3179/27','B006','C023','R014','U001','P014','04:49:35','2016-03-08','',231000,1,1),('O015','3171/46','B006','C024','R015','U001','P015','05:24:00','2016-03-08','',234000,1,1),('O016','3186/47','B006','C025','R016','U001','P016','05:32:12','2016-03-08','',232000,1,1),('O017','3187/53','B006','C026','R017','U001','P017','05:36:09','2016-03-08','',232000,1,1),('O018','3186/29','B006','C027','R018','U001','P018','05:40:34','2016-03-08','',232000,1,1),('O019','3185/44','B006','C036','R019','U001','P019','03:37:23','2016-03-15','',231000,1,1),('O020','3198/57','B006','C037','R020','U001','P020','04:09:52','2016-03-15','',232000,1,1),('O021','3198/18','B006','C038','R021','U001','P021','04:12:54','2016-03-15','',232000,1,1),('O022','3216/143','B006','C039','R022','U001','P022','04:24:27','2016-03-15','',232000,1,1),('O024','3198/15','B006','C041','R024','U001','P024','04:33:36','2016-03-15','',232000,1,1),('O025','3198/29','B006','C042','R025','U001','P025','04:36:36','2016-03-15','',232000,1,1),('O026','3198/14','B006','C043','R026','U001','P026','12:26:03','2016-03-17','',232000,1,1),('O027','3216/76','B006','C044','R027','U001','P027','12:33:56','2016-03-17','',223900,1,0),('O028','3198/17','B006','C045','R028','U001','P028','12:38:16','2016-03-17','',233000,1,1),('O029','3216/140','B006','C046','R029','U001','P029','12:44:24','2016-03-17','',232000,1,1),('O030','3216/125','B006','C047','R030','U001','P030','12:49:23','2016-03-17','',230500,1,1),('O031','3216/139','B006','C048','R031','U001','P031','12:55:29','2016-03-17','',232000,1,1),('O032','3185/45','B006','C049','R032','U001','P032','01:01:11','2016-03-17','',232000,1,1),('O033','3216/144','B006','C050','R033','U001','P033','01:21:52','2016-03-17','',232000,1,1),('O034','3216/102','B006','C051','R034','U001','P034','01:25:44','2016-03-17','',232000,1,1),('O035','3188/65','B006','C052','R035','U001','P035','01:35:15','2016-03-17','',232000,1,1),('O036','3200/13','B006','C053','R036','U001','P036','10:10:38','2016-03-25','',232000,1,1),('O037','3200/18','B006','C054','R037','U001','P037','10:16:18','2016-03-25','',230000,1,1),('O038','3200/62','B006','C055','R038','U001','P038','10:30:11','2016-03-25','',232000,1,1),('O039','3200/71','B006','C056','R039','U001','P039','10:39:38','2016-03-25','',231000,1,1),('O040','3198/67','B006','C057','R040','U001','P040','10:41:34','2016-03-25','',232000,1,1),('O041','3200/47','B006','C058','R041','U001','P041','03:21:54','2016-03-25','',232000,1,1),('O042','3030/43','B009','C062','R045','U002','P045','02:57:43','2016-03-30','',169900,1,0),('O043','2952/22','B006','C063','R046','U002','P046','03:30:05','2016-03-30','',234000,1,1),('O044','3188/18','B006','C065','R048','U003','P048','03:57:23','2016-03-30','',233400,1,0),('O045','3197/33','B006','C066','R049','U003','P049','04:04:04','2016-03-30','',234000,1,1),('O046','3186/36','B006','C067','R050','U003','P050','04:11:22','2016-03-30','',234000,1,1),('O047','3186/20','B006','C068','R051','U003','P051','04:16:28','2016-03-30','',234000,1,1),('O048','2938/40','B006','C069','R052','U003','P052','04:19:26','2016-03-30','',234000,1,1),('O049','3186/38','B006','C070','R053','U003','P053','04:21:51','2016-03-30','',234000,1,1),('O050','3198/30','B006','C071','R054','U003','P054','04:24:44','2016-03-30','',234000,1,1),('O051','3216/141','B006','C072','R055','U003','P055','04:27:26','2016-03-30','',234000,1,1),('O052','3185/172','B006','C073','R056','U003','P056','04:30:07','2016-03-30','',234000,1,1),('O053','3200/174','B006','C074','R057','U003','P057','04:32:19','2016-03-30','',234000,1,1),('O054','3216/120','B006','C075','R058','U003','P058','04:43:28','2016-03-30','',233500,1,1),('O055','3128/34','B001','C076','R059','U003','P059','04:46:21','2016-03-30','',117000,1,1),('O056','3189/18','B016','C077','R060','U003','P060','05:20:03','2016-03-30','',118200,1,1),('O057','3216/66','B006','C078','R061','U003','P061','05:23:53','2016-03-30','',233200,1,1),('O058','3240/22','B006','C079','R062','U003','P062','05:26:17','2016-03-30','',233200,1,1),('O059','3186/52','B006','C080','R063','U003','P063','05:29:44','2016-03-30','',233200,1,1),('O060','3170/50','B006','C081','R064','U001','P064','05:56:06','2016-03-30','',224500,1,1),('O061','3106/16','B006','C083','R066','U002','P066','06:06:27','2016-03-30','',233400,1,0),('O062','3200/65','B006','C084','R067','U002','P067','06:09:38','2016-03-30','',234000,1,1),('O063','3200/14','B006','C085','R068','U002','P068','06:18:02','2016-03-30','',240500,1,1),('O064','3240/5','B006','C086','R069','U002','P069','06:24:40','2016-03-30','',232000,1,1);
+/*!40000 ALTER TABLE `ordertable` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payment` (
+  `paymentId` varchar(10) NOT NULL,
+  `commision` decimal(10,0) DEFAULT NULL,
+  `bikeAmount` decimal(10,0) DEFAULT NULL,
+  `rmvAmount` decimal(10,0) DEFAULT NULL,
+  `insuranceAmount` decimal(10,0) DEFAULT NULL,
+  `orderAmount` decimal(10,0) DEFAULT NULL,
+  `otherPaymentAmount` decimal(10,0) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`paymentId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payment`
+--
+
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+INSERT INTO `payment` VALUES ('P001',6750,224900,8500,600,0,NULL,NULL),('P002',6750,224900,15000,600,0,NULL,NULL),('P003',5750,223900,6500,600,0,0,'DISCOUNT-1000'),('P004',5750,223900,6500,600,0,0,'discount-1000'),('P005',6750,224900,6500,600,0,NULL,NULL),('P006',6750,224900,8500,600,0,NULL,NULL),('P007',6750,224900,6500,600,0,NULL,NULL),('P008',6750,224900,6500,600,0,NULL,NULL),('P009',6750,224900,6500,600,0,NULL,NULL),('P010',6750,224900,8500,600,0,NULL,NULL),('P011',6750,224900,6500,600,0,NULL,NULL),('P012',4750,222900,6500,600,0,0,''),('P013',5750,223900,6500,600,0,0,'DISCOUNT'),('P014',5750,223900,6500,600,0,0,'discount 1000'),('P015',6750,224900,8500,600,0,NULL,NULL),('P016',6750,224900,6500,600,0,NULL,NULL),('P017',6750,224900,6500,600,0,NULL,NULL),('P018',6750,224900,6500,600,0,NULL,NULL),('P019',5750,223900,6500,600,0,0,'discount'),('P020',6750,224900,6500,600,0,NULL,NULL),('P021',6750,224900,6500,600,0,NULL,NULL),('P022',6750,224900,6500,600,0,NULL,NULL),('P023',5750,223900,6500,600,0,0,'Discount'),('P024',6750,224900,6500,600,0,0,''),('P025',6750,224900,6500,600,0,NULL,NULL),('P026',6750,224900,6500,600,0,NULL,NULL),('P027',5400,217400,6500,600,0,NULL,NULL),('P028',5750,223900,8500,600,0,0,'DISCOUNT'),('P029',6750,224900,6500,600,0,NULL,NULL),('P030',5250,223400,6500,600,0,0,''),('P031',6750,224900,6500,600,0,0,'MR.GEETHAL AND MR.LALANTHA\nAPPROVAL THIS BICK.'),('P032',6750,224900,6500,600,0,NULL,NULL),('P033',6750,224900,6500,600,0,NULL,NULL),('P034',6750,224900,6500,600,0,NULL,NULL),('P035',6750,224900,6500,600,0,NULL,NULL),('P036',6750,224900,6500,600,0,NULL,NULL),('P037',4750,222900,6500,600,0,0,'DISCOUNT'),('P038',6750,224900,6500,600,0,NULL,NULL),('P039',5750,223900,6500,600,0,0,'DISCOUNT'),('P040',6750,224900,6500,600,0,NULL,NULL),('P041',6750,224900,6500,600,0,NULL,NULL),('P042',6750,224900,6500,600,0,NULL,NULL),('P043',4750,222900,6500,600,0,0,''),('P044',5250,162900,7000,600,0,NULL,NULL),('P045',5250,162900,7000,600,0,NULL,NULL),('P046',6750,224900,8500,600,0,NULL,NULL),('P047',6750,224900,8500,900,0,NULL,NULL),('P048',6750,224900,8500,600,0,NULL,NULL),('P049',6750,224900,8500,600,0,NULL,NULL),('P050',6750,224900,8500,600,0,NULL,NULL),('P051',6750,224900,8500,600,0,NULL,NULL),('P052',6750,224900,8500,600,0,NULL,NULL),('P053',6750,224900,8500,600,0,NULL,NULL),('P054',6750,224900,8500,600,0,NULL,NULL),('P055',6750,224900,8500,600,0,NULL,NULL),('P056',6750,224900,8500,600,0,NULL,NULL),('P057',6750,224900,8500,600,0,NULL,NULL),('P058',6250,224400,8500,600,0,0,'DISCOUNT'),('P059',4250,107900,8500,600,0,NULL,NULL),('P060',4250,109900,7700,600,0,NULL,NULL),('P061',6750,224900,7700,600,0,NULL,NULL),('P062',6750,224900,7700,600,0,NULL,NULL),('P063',6750,224900,7700,600,0,NULL,NULL),('P064',5400,217400,6500,600,0,NULL,NULL),('P065',6750,224900,8500,600,0,NULL,NULL),('P066',6750,224900,8500,600,0,NULL,NULL),('P067',6750,224900,8500,600,0,NULL,NULL),('P068',6750,224900,15000,600,0,NULL,NULL),('P069',6750,224900,6500,600,0,NULL,NULL);
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `priceannouncement`
+--
+
+DROP TABLE IF EXISTS `priceannouncement`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `priceannouncement` (
+  `priceAnnouncementId` varchar(10) NOT NULL,
+  `priceAnnouncementDate` date DEFAULT NULL,
+  `effectDate` date DEFAULT NULL,
+  PRIMARY KEY (`priceAnnouncementId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `priceannouncement`
+--
+
+LOCK TABLES `priceannouncement` WRITE;
+/*!40000 ALTER TABLE `priceannouncement` DISABLE KEYS */;
+INSERT INTO `priceannouncement` VALUES ('P001','2015-10-09','2015-10-13'),('P002','2016-01-06','2016-01-11');
+/*!40000 ALTER TABLE `priceannouncement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `returnstock`
+--
+
+DROP TABLE IF EXISTS `returnstock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `returnstock` (
+  `returnId` varchar(10) NOT NULL,
+  `roundNo` varchar(10) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `returnDate` date DEFAULT NULL,
+  PRIMARY KEY (`returnId`),
+  KEY `roundNo` (`roundNo`),
+  CONSTRAINT `returnstock_ibfk_1` FOREIGN KEY (`roundNo`) REFERENCES `stock` (`roundNo`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `returnstock`
+--
+
+LOCK TABLES `returnstock` WRITE;
+/*!40000 ALTER TABLE `returnstock` DISABLE KEYS */;
+INSERT INTO `returnstock` VALUES ('R001','3007/67','WITHOUT HELMET','2016-02-14'),('R002','2873/17','WITHOUT HELMET AND ONE SIDE MIRROR LITTLE DAMAGE','2016-02-14'),('R003','2873/17','WITHOUT HELEMET AND THE SIDE MIRROR DAMAGE A LITTLE BIT','2016-02-14'),('R004','2967/91','EVERY THING ALL RIGHT','2016-02-14'),('R005','2999/22','WITHOUT6 HELEMET THE BIKE IS RETERN','2016-03-04'),('R006','2945/33','WITH OUT THE HELEMET ','2016-03-04'),('R007','3130/70','WITHOUT THE HELEMET','2016-03-04'),('R008','2979/43','WITHOUT THE HELEMET','2016-03-04');
+/*!40000 ALTER TABLE `returnstock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rmv`
+--
+
+DROP TABLE IF EXISTS `rmv`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rmv` (
+  `rmvId` varchar(10) NOT NULL,
+  `mta3` int(11) DEFAULT NULL,
+  `do` int(11) DEFAULT NULL,
+  `idCopy` int(11) DEFAULT NULL,
+  `idPhotos` int(11) DEFAULT NULL,
+  `isLeasing` int(11) DEFAULT NULL,
+  PRIMARY KEY (`rmvId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rmv`
+--
+
+LOCK TABLES `rmv` WRITE;
+/*!40000 ALTER TABLE `rmv` DISABLE KEYS */;
+INSERT INTO `rmv` VALUES ('R001',0,0,0,0,1),('R002',0,0,0,0,0),('R003',0,0,0,0,0),('R004',0,0,0,0,0),('R005',0,0,0,0,0),('R006',0,0,0,0,1),('R007',0,0,0,0,0),('R008',0,0,0,0,0),('R009',0,0,0,0,0),('R010',0,0,0,0,1),('R011',0,0,0,0,0),('R012',0,0,0,0,0),('R013',0,0,0,0,0),('R014',0,0,0,0,0),('R015',0,0,0,0,1),('R016',0,0,0,0,0),('R017',0,0,0,0,0),('R018',0,0,0,0,0),('R019',0,0,0,0,0),('R020',0,0,0,0,0),('R021',0,0,0,0,0),('R022',0,0,0,0,0),('R023',0,0,0,0,0),('R024',0,0,0,0,0),('R025',0,0,0,0,0),('R026',0,0,0,0,0),('R027',0,0,0,0,0),('R028',0,0,0,0,1),('R029',0,0,0,0,0),('R030',0,0,0,0,0),('R031',0,0,0,0,0),('R032',0,0,0,0,0),('R033',0,0,0,0,0),('R034',0,0,0,0,0),('R035',0,0,0,0,0),('R036',0,0,0,0,0),('R037',0,0,0,0,0),('R038',0,0,0,0,0),('R039',0,0,0,0,0),('R040',0,0,0,0,0),('R041',0,0,0,0,0),('R042',0,0,0,0,0),('R043',0,0,0,0,0),('R044',0,0,0,0,1),('R045',0,0,0,0,1),('R046',0,0,0,0,1),('R047',0,0,0,0,1),('R048',0,0,0,0,1),('R049',0,0,0,0,1),('R050',0,0,0,0,1),('R051',0,0,0,0,1),('R052',0,0,0,0,1),('R053',0,0,0,0,1),('R054',0,0,0,0,1),('R055',0,0,0,0,1),('R056',0,0,0,0,1),('R057',0,0,0,0,1),('R058',0,0,0,0,1),('R059',0,0,0,0,1),('R060',0,0,0,0,1),('R061',0,0,0,0,1),('R062',0,0,0,0,1),('R063',0,0,0,0,1),('R064',0,0,0,0,0),('R065',0,0,0,0,1),('R066',0,0,0,0,1),('R067',0,0,0,0,1),('R068',0,0,0,0,0),('R069',0,0,0,0,0);
+/*!40000 ALTER TABLE `rmv` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stock` (
+  `batchId` varchar(10) DEFAULT NULL,
+  `modelId` varchar(10) DEFAULT NULL,
+  `roundNo` varchar(10) NOT NULL,
+  `engineNo` varchar(100) DEFAULT NULL,
+  `stateName` varchar(100) DEFAULT NULL,
+  `isSold` int(11) DEFAULT NULL,
+  `remark` varchar(300) DEFAULT NULL,
+  `chassisNo` varchar(100) DEFAULT NULL,
+  `note` varchar(300) DEFAULT NULL,
+  `colour` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`roundNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stock`
+--
+
+LOCK TABLES `stock` WRITE;
+/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
+INSERT INTO `stock` VALUES ('B018','M016','2838/7','CF1EF1268268',NULL,0,'','MD625CF11F1E68961','','BLUE '),('B018','M009','2870/47','DF5FF1179583',NULL,0,'','MD625MF57F1F98638','','BLACK/GREEN '),('B018','M008','2873/17','CG4FF2097046',NULL,0,'','MD626CG41F2F81521','','BLUE '),('B015','M008','2915/48','CG4FF2101872',NULL,0,'','MD626CG47F2G86225','','BLUE '),('B020','M006','2938/40','OG4GF1268579',NULL,0,'','MD626AG48F1G73705','','RED '),('B011','M006','2945/33','OG4GF1268418',NULL,0,'','MD626AG43F1G73515','','WHITE '),('B018','M006','2952/22','OG4FF1265278',NULL,0,'','MD626AG49F1G75463','','WHITE '),('B003','M001','2967/91','OD1HF1524924',NULL,0,'','MD6261DD17F1H34312','','BLUE '),('B011','M006','2979/43','OG4HF1276305',NULL,0,'','MD626AG43F1H81097','','WHITE '),('B001','M006','2999/22','OG4HF1279746',NULL,0,'','MD626AG47F1H84679','','WHITE/BLACK '),('B014','M012','3007/67','C1L5113600',NULL,0,'','MD624HC12F2H12258','','GREEN '),('B015','M009','3030/34','DF5KF1203990',NULL,0,'','MD625MF56F1K20906','','RED '),('B019','M009','3030/43','DFKF1204028',NULL,0,'','MD625MF55FIK20931','','RED '),('B002','M008','3045/57','CG4KF2123506',NULL,0,'',' MD626CG44F2K07434','','white '),('B017','M006','3053/10','OG4KF1290745',NULL,0,'','MD626AG43F1K95838','','BLACK/RED '),('B020','M006','3085/5','OG4LF1297933',NULL,0,'','MD626AG42F1L03234','','BLACK/RED '),('B018','M008','3098/41','CG4LF2141382',NULL,0,'','MD626CG40F2L60392','','RED '),('B002','M008','3099/23','CG4LF2141840',NULL,0,'','MD626CG42F2L60474','','RED '),('B002','M006','3103/01','OG4LF1300915',NULL,0,'','MD626AG42F1L06280','','WHITE/BLACK '),('B004','M006','3106/16','OG4LF1300789',NULL,0,'','MD626AG46F1L06217','','WHITE/BLACK '),('B004','M006','3106/66','OG4AG1304150',NULL,0,'','MD626AG46G1A09615','','WHITE/BLACK '),('B004','M006','3106/68','OG4AG1304131',NULL,0,'','MD626AG48G1A09602','','WHITE/BLACK '),('B008','M001','3109/53','OD1AG1704705',NULL,0,'','MD621DD18G1A37877','','BLACK '),('B018','M012','3121/47','*C1M5119245*',NULL,0,'','MD624HC13F2N15466','','RED '),('B007','M001','3128/34','OD1AG1715073',NULL,0,'','MD621DD14G1A38251','','RED '),('B005','M006','3130/70','OG4AG1306685',NULL,0,'','MD626AG44G1A12402','','BLACK '),('B018','M001','3134/122','OD1AG1725000',NULL,0,'','MD621DD13G1A38726','','BLACK '),('B018','M001','3134/158','OD1AG1725866',NULL,0,'','MD621DD13G1A38838','','BLACK '),('B010','M006','3141/31','OG4AG1307816',NULL,0,'','MD626AG49G1A13609','','RED '),('B006','M006','3141/53','OG4AG1307843',NULL,0,'','MD626AG41G1A13619','','WHITE/BLACK '),('B018','M015','3156/46','OE6NF2047528',NULL,0,'','MD634KE61F2N78009','','WHITE '),('B020','M006','3164/44','OG4AG1310712',NULL,0,'','MD626AG46G1A16550','','BLACK/RED '),('B011','M006','3168/46','OG4AG1309436',NULL,0,'','MD626AG41G1A15225','','RED '),('B009','M006','3170/50','OG4AG1309701',NULL,0,'','MD626AG45G1A15535','','WHITE '),('B004','M006','3171/27','OG4AG1307970',NULL,0,'','MD626AG44G1A13775','','BLACK/RED '),('B004','M006','3171/46','OG4AG1310115',NULL,0,'','MD626AG46G1A16046','','BLACK/RED '),('B011','M006','3175/69','OG4AG1306986',NULL,0,'','MD626AG44G1A12688','','BLACK '),('B004','M006','3176/1','OG4AG1310914',NULL,0,'','MD626AG49G1A16736','','RED '),('B004','M006','3176/13','OG4AG1310821',NULL,0,'','MD626AG45G1A16636','','RED '),('B004','M006','3176/28','OG4AG1310874',NULL,0,'','MD626AG42G1A16688','','RED '),('B013','M006','3179/27','OG4AG1311976',NULL,0,'','MD626AG4XG1A17877','','BLACK/RED '),('B004','M006','3179/3','OG4AG1310518',NULL,0,'','MD626AG47G1A16430','','BLACK/RED '),('B013','M006','3179/49','OG4AG1311976',NULL,0,'','MD626AG4XG1A17877','','BLACK/RED '),('B013','M006','3180/73','OG4AG13127969',NULL,0,'','MD626AG43G1A18725','','TIT GREY '),('B004','M006','3185/139','OG4AG1318322',NULL,0,'','MD626AG43G1A24458','','WHITE '),('B004','M006','3185/172','OG4AG1318452',NULL,0,'','MD626AG47G1A24592','','TIT GREY '),('B020','M006','3185/44','OG4AG1317997',NULL,0,'','MD626AG46G1A24132','','BLACK/RED '),('B020','M006','3185/45','OG4AG1317636',NULL,0,'','MD626AG42G1A23723','','BLACK/RED '),('B020','M006','3185/56','OG4AG1317912',NULL,0,'','MD626AG43G1A24086','','BLACK/RED '),('B020','M006','3185/62','OG4AG1317982',NULL,0,'','MD626AG45G1A24106','','BLACK/RED '),('B020','M006','3186/20','OG4AG1318677',NULL,0,'','MD626AG44G1A24906','','RED '),('B020','M006','3186/29','OG4AG1318728',NULL,0,'','MD626AG48G1A24942','','RED '),('B020','M006','3186/36','OG4AG1318715',NULL,0,'','MD626AG42G1A24919','','RED '),('B020','M006','3186/38','OG4AG1318689',NULL,0,'','MD626AG46G1A24891','','RED '),('B020','M006','3186/47','OG4AG1318650',NULL,0,'','MD626AG40G1A24854','','RED '),('B024','M006','3186/52','OG4AG1318740',NULL,0,'','MD626AG43G1A24928            ','','RED '),('B013','M006','3187/53','OG4AG1317618',NULL,0,'','MD626AG47G1A23720','','BLACK '),('B004','M006','3187/56','OG4AG1312989',NULL,0,'','MD626AG45GIA23702','','BLACK '),('B004','M006','3188/18','OG4AG1318757',NULL,0,'','MD626AG45G1A25000','','BLACK '),('B004','M006','3188/19','OG4AG1318797',NULL,0,'','MD626AG44G1A25022','','BLACK '),('B004','M006','3188/65','OG4AG1318901',NULL,0,'','MD626AG44G1A25067','','BLACK '),('B012','M001','3189/18','OD1AG1775522',NULL,0,'','MD621DD1XG1A40389','','GREEN '),('B012','M006','3197/33','OG4AG1319826',NULL,0,'','MD626AG43G1A26064','','BLACK '),('B021','M006','3198/14','OG4AG1319738',NULL,0,'','MD626AG40G1A25924','','RED '),('B021','M006','3198/15','OG4AG1319431',NULL,0,'','MD626AG48G1A25878','','RED '),('B021','M006','3198/17','OG4AG1319757',NULL,0,'','MD626AG41G1A25916','','RED '),('B021','M006','3198/18','OG4AG1319605',NULL,0,'','MD626AG49G1A25906','','RED '),('B021','M006','3198/29','OG4AG1319746',NULL,0,'','MD626AG43G1A25903','','RED '),('B021','M006','3198/30','OG4AG1319609',NULL,0,'','MD626AG42G1A25908','','RED '),('B021','M006','3198/57','OG4AG1319623',NULL,0,'','MD626AG41G1A25964','','RED '),('B023','M006','3198/67','OG4AG1318662',NULL,0,'','MD626AG45G1A24882','','RED '),('B004','M006','3200/112','OG4AG1318430',NULL,0,'','MD626AG49G1A24626','','TIT GREY '),('B023','M006','3200/13','OG4AG1318678',NULL,0,'','MD626AG44G1A24873','','RED '),('B023','M006','3200/14','OG4AG1318631',NULL,0,'','MD626AG45G1A24848','','RED '),('B020','M006','3200/174','OG4AG1318902',NULL,0,'','MD626AG40G1A25079','','BLACK '),('B023','M006','3200/18','OG4AG1318741',NULL,0,'','MD626AG40G1A24952','','RED '),('B023','M006','3200/47','OG4AG1319435',NULL,0,'','MD626AG40G1A25969','','RED '),('B023','M006','3200/62','OG4AG1319593',NULL,0,'','MD626AG49G1A25890','','RED '),('B023','M006','3200/63','OG4AG1319327',NULL,0,'ALUTHGAMA BRANCH','MD626AG47G1A25967','','RED '),('B023','M006','3200/65','OG4AG1319722',NULL,0,'','MD626AG40G1A25891','','RED '),('B023','M006','3200/69','OG4AG1319721',NULL,0,'','MD626AG45G1A25904','','RED '),('B023','M006','3200/71','OG4AG1319755',NULL,0,'','MD626AG40G1A25857','','RED '),('B004','M001','3202/35','OD1AG1779164',NULL,0,'','MD621DD16G1A40762','','BLACK '),('B026','M006','3203/11','OG4AG1320389',NULL,0,'','MD626AG46G1A26530','','RED '),('B024','M006','3203/12','OG4AG1320322',NULL,0,'','MD626AG44G1A26512','','RED '),('B025','M006','3203/31','OG4AG1320318',NULL,0,'','MD626AG48G1A26528','','RED '),('B024','M006','3203/33','OG4AG1320326',NULL,0,'','MD626AG44G1A26493','','RED '),('B024','M006','3203/34','OG4AG1320408',NULL,0,'','MD626AG43G1A26503','','RED '),('B025','M006','3203/42','OG4AG1320309',NULL,0,'','MD626AG48G1A26514','','RED '),('B025','M006','3203/45','OG4AG1320222',NULL,0,'','MD626AG48G1A26495','','RED '),('B025','M006','3203/47','OG4AG1320293',NULL,0,'','MD626AG48G1A26321','','RED '),('B025','M006','3203/51','OG4AG1319644',NULL,0,'','MD626AG45G1A25952','','RED '),('B024','M006','3203/57','OG4AG1320311',NULL,0,'','MD626AG44G1A26509','','RED '),('B024','M006','3209/22','OG4AG1320045',NULL,0,'','MD626AG46G1A26186','','TIT GREY '),('B020','M006','3216/102','OG4AG1323581',NULL,0,'','MD626AG45G1A29841','','BLACK '),('B020','M006','3216/120','OG4AG1324215',NULL,0,'','MD626AG49G1A30510','','BLACK '),('B020','M006','3216/125','OG4AG1320278',NULL,0,'','MD626AG47G1A30523','','BLACK '),('B020','M006','3216/139','OG4AG1323513',NULL,0,'MR.GEETHAL TVS BICK ISSUED CUSTOMER','MD626AG43G1A29868','','BLACK '),('B020','M006','3216/140','OG4AG1323577',NULL,0,'','MD626AG41G1A29805','','BLACK '),('B020','M006','3216/141','OG4AG1324235',NULL,0,'','MD626AG43G1A30471','','BLACK '),('B020','M006','3216/143','OG4AG1324127',NULL,0,'','MD626AG44G1A30494','','BLACK '),('B020','M006','3216/144','OG4AG1323539',NULL,0,'','MD626AG48G1A29865','','BLACK '),('B025','M006','3216/34','OG4AG1323941',NULL,0,'','MD626AG4XG1A30192','','BLACK/RED '),('B025','M006','3216/43','OG4AG1323842',NULL,0,'','MD626AG48G1A30112','','BLACK/RED '),('B025','M006','3216/44','OG4AG1323888',NULL,0,'','MD626AG47G1A30151','','BLACK/RED '),('B026','M006','3216/55','OG4AG1323950',NULL,0,'','MD626AG45G1A30178','','BLACK/RED '),('B025','M006','3216/66','OG4AG1323911',NULL,0,'','MD626AG49G1A30099','','BLACK/RED '),('B020','M006','3216/76','OG4AG1324229',NULL,0,'','MD626AG4XG1A30516','','BLACK '),('B026','M006','3217/15','OG4AG1323907',NULL,0,'','MD626AG49G1A30183','','BLACK/RED '),('B026','M006','3217/17','OG4AG1323948',NULL,0,'','MD626AG42G1A30199','','BLACK/RED '),('B026','M006','3217/23','OG4AG1323362',NULL,0,'','MD626AG42G1A30171','','BLACK/RED '),('B026','M006','3217/27','OG4AG1321739',NULL,0,'','MD626AG45G1A27989','','BLACK/RED '),('B026','M006','3217/28','OG4AG1323886',NULL,0,'','MD626AG49G1A30071','','BLACK/RED '),('B026','M006','3217/51','OG4AG1323852',NULL,0,'','MD626AG46G1A30108','','BLACK/RED '),('B026','M006','3217/60','OG4AG1323944',NULL,0,'','MD626AG46G1A30089','','BLACK/RED '),('B026','M006','3218/1','OG4AG1323265',NULL,0,'','MD626AG44G1A29538','','RED '),('B026','M006','3218/14','OG4AG1323237',NULL,0,'','MD626AG41G1A29559','','RED '),('B026','M006','3218/49','OG4AG1324028',NULL,0,'','MD626AG42G1A30283','','RED '),('B026','M006','3218/67','OG4AG1323101',NULL,0,'','MD626AG40G1A29567','','RED '),('B026','M006','3218/68','OG4AG1323713',NULL,0,'','MD626AG46G1A30299','','RED '),('B026','M006','3218/71','OG4AG1323082',NULL,0,'','MD626AG45G1A28057','','RED '),('B026','M006','3218/72','OG4AG1323301',NULL,0,'','MD626AG46G1A29573','','RED '),('B025','M006','3234/39','OG4BG1330773',NULL,0,'','MD626AG40G1B37347','','WHITE '),('B025','M006','3234/41','OG4BG1330877',NULL,0,'','MD626AG43G1B37357','','WHITE '),('B026','M006','3238/15','OG4BG1331146',NULL,0,'','MD626AG40G1B37798','','TIT GREY '),('B026','M006','3238/61','OG4BG1331332',NULL,0,'','MD626AG41G1B37843','','TIT GREY '),('B024','M006','3239/16','OG4BG1331201',NULL,0,'','MD626AG41G1B37728','','TIT GREY '),('B025','M006','3239/45','OG4BG1331290',NULL,0,'','MD626AG45G1B37778','','TIT GREY '),('B025','M006','3239/6','OG4BG1331269',NULL,0,'','MD626AG43G1B37732','','TIT GREY '),('B025','M006','3239/64','OG4BG1331284',NULL,0,'','MD626AG42G1B37818','','TIT GREY '),('B025','M006','3240/22','OG4CG1331390',NULL,0,'','MD626AG46G1C37906','','BLACK '),('B025','M006','3240/5','OG4CG1331426',NULL,0,'','MD626AG45G1C37931','','BLACK '),('B025','M006','3241/152','OG4BG1325523',NULL,0,'','MD626AG41G1B31802','','BLACK '),('B025','M006','3241/208','OG4BG1329697',NULL,0,'','MD626AG49G1B36200','','BLACK ');
+/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `userId` varchar(10) NOT NULL,
+  `userName` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `userType` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('U001','kalana','kapila123','Admin Account'),('U002','prabhani','12345','Local Account'),('U003','sewwandi','sewwandi12','Local Account');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-09-03 15:18:00

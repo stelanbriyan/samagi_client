@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="home" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="province" class="java.lang.String"/>
+	<parameter name="nic" class="java.lang.String"/>
+	<parameter name="pdate" class="java.lang.String"/>
+	<parameter name="poNo" class="java.lang.String"/>
+	<parameter name="roundNo" class="java.lang.String"/>
+	<parameter name="modelColor" class="java.lang.String"/>
+	<parameter name="engineNo" class="java.lang.String"/>
+	<parameter name="dealerName" class="java.lang.String"/>
+	<parameter name="dealerCode" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="reportNo" class="java.lang.String"/>
+	<parameter name="poNoP" class="java.lang.String"/>
+	<parameter name="poNoValue" class="java.lang.String"/>
+	<parameter name="downPayment" class="java.lang.String"/>
+	<parameter name="cheque" class="java.lang.String"/>
+	<parameter name="amount" class="java.lang.String"/>
+	<parameter name="dateP" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="251" y="249" width="94" height="17"/>
+				<textElement/>
+				<text><![CDATA[Date Of Purchase :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="214" width="474" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="357" width="555" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#666666"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="139" y="63" width="280" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Leasing Sales Report - Leasing Sales Motor Bike]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="308" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Y / N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="216" width="76" height="16"/>
+				<textElement/>
+				<text><![CDATA[Home/ Office :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="232" width="54" height="13"/>
+				<textElement/>
+				<text><![CDATA[Province :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="139" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="215" width="81" height="17"/>
+				<textElement/>
+				<text><![CDATA[Mobile No :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="229" width="167" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="152" y="36" width="254" height="14"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No 38 , Old Negombo Road , Wattala.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="308" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Y / N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="325" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Y / N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="249" width="81" height="17"/>
+				<textElement/>
+				<text><![CDATA[NIC No :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="110" width="485" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="152" y="50" width="254" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tel : 4605200 Fax : 4614909]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="127" width="138" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="383" y="114" width="56" height="17"/>
+				<textElement/>
+				<text><![CDATA[Report No  :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="251" y="127" width="126" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="442" y="246" width="113" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="97" width="70" height="17"/>
+				<textElement/>
+				<text><![CDATA[Dealer Name  :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="262" width="167" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="213" y="114" width="35" height="17"/>
+				<textElement/>
+				<text><![CDATA[Date  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="308" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Rubber Mats  -]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="143" width="56" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[System Ref :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="114" width="70" height="17"/>
+				<textElement/>
+				<text><![CDATA[Dealer Code  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="308" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Owner Manual  -]]></text>
+			</staticText>
+			<line>
+				<reportElement x="345" y="262" width="210" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="327" y="230" width="228" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="325" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Service Warranty  -]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="325" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Y / N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="285" width="139" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Free Issues]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="325" width="96" height="17"/>
+				<textElement/>
+				<text><![CDATA[Tool Kit  -]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="232" width="81" height="17"/>
+				<textElement/>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="22" width="254" height="14"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TVS Lanka ( PVT ) LTD]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="245" width="303" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="442" y="128" width="113" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="198" width="81" height="17"/>
+				<textElement/>
+				<text><![CDATA[Name Mr, Mrs :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="96" y="198" width="100" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="216" width="140" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{mobile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="216" width="192" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{home}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="232" width="269" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="232" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{province}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="249" width="140" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="249" width="172" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="373" width="139" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[( Filled by Dealer )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="390" width="139" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motor Bike Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="422" width="81" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PO No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="422" width="101" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Round No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="422" width="101" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Model / Color]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="422" width="101" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Engine No ( Full )]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="416" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="439" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="468" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="417" width="1" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="113" y="417" width="1" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="236" y="417" width="1" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="384" y="417" width="1" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="554" y="417" width="1" height="51"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="1" y="448" width="111" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{poNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="448" width="122" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{roundNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="448" width="169" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{engineNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="448" width="146" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{modelColor}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="394" y="143" width="129" height="17"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="479" width="139" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Details :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="500" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="15" y="504" width="55" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PO No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="504" width="58" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PO Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="504" width="75" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Down Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="253" y="504" width="75" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cheque / Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="504" width="75" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="504" width="75" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="522" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="546" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="501" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="71" y="500" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="145" y="500" width="1" height="46"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="240" y="501" width="1" height="45"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="354" y="501" width="1" height="45"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="460" y="501" width="1" height="45"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="555" y="501" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="564" width="286" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[( Please confirm the below attachments )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="551" width="286" height="13"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORTANT : Documents for RMV Registration / Others]]></text>
+			</staticText>
+			<line>
+				<reportElement x="207" y="597" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="40" y="677" width="514" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="63" y="599" width="35" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MTA3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="611" width="35" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Key]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="646" width="358" height="13"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( Cheque /s from dealer Bank Account or Original Cash Deposit Slip/s ONLY ACCEPTED]]></text>
+			</staticText>
+			<line>
+				<reportElement x="98" y="755" width="283" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="707" width="555" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="293" y="598" width="40" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Duplicate]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="598" width="1" height="46"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="287" y="598" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="665" width="40" height="13"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Remarks :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="624" width="554" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="18" y="599" width="35" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MTA 2]]></text>
+			</staticText>
+			<line>
+				<reportElement x="98" y="723" width="283" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="161" y="599" width="35" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2 Photos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="710" width="95" height="16"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dealer Signature :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="644" width="554" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="742" width="95" height="16"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Rubber Stamp :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="598" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="56" y="598" width="1" height="46"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="692" width="555" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="218" y="598" width="64" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Original]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="765" width="553" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Please Note :  Registration will be done by TVSL & above all documents to be sent to Credit Control Department]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="597" width="554" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="112" y="599" width="35" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Copy]]></text>
+			</staticText>
+			<line>
+				<reportElement x="153" y="598" width="1" height="46"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="344" y="598" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="218" y="611" width="63" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase Order]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="598" width="48" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proforma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="611" width="67" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice Copy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="599" width="57" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt Copy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="599" width="64" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RMV ChequeNo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="422" y="597" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="485" y="598" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="554" y="598" width="1" height="47"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="778" width="553" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[with separate RMV charges.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="97" width="456" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{dealerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="114" width="115" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{dealerCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="114" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="114" width="83" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{reportNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="528" width="57" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{poNoP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="528" width="72" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{poNoValue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="528" width="89" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{downPayment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="528" width="100" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{cheque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="528" width="100" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="528" width="92" height="13"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{dateP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -588,13 +588,15 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
+                  <StringArray count="8">
                     <StringItem index="0" value="View All Sale"/>
                     <StringItem index="1" value="View Daily Sales"/>
                     <StringItem index="2" value="This Month Sales"/>
                     <StringItem index="3" value="This Year Sales"/>
                     <StringItem index="4" value="Payment Not Completed"/>
                     <StringItem index="5" value="Payment Completed"/>
+                    <StringItem index="6" value="Reported"/>
+                    <StringItem index="7" value="Not Reported"/>
                   </StringArray>
                 </Property>
               </Properties>

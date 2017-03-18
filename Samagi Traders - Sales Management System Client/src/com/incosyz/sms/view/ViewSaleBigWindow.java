@@ -73,9 +73,7 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
         } catch (RemoteException | NotBoundException | MalformedURLException ex) {
             Logger.getLogger(ViewSaleBigWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
+
     }
 
     public void constructor() {
@@ -83,11 +81,11 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
 
         orderViewTableModel = (DefaultTableModel) orderViewTable.getModel();
         setAllOrders();
-        
+
         String userType = Home.USER_MODEL.getUserType();
         if (userType.equals("Admin Account")) {
             deleteButton.setVisible(true);
-        }else{
+        } else {
             deleteButton.setVisible(false);
         }
     }
@@ -384,7 +382,7 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "View Config", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         viewCombo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        viewCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "View All Sale", "View Daily Sales", "This Month Sales", "This Year Sales", "Payment Not Completed", "Payment Completed" }));
+        viewCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "View All Sale", "View Daily Sales", "This Month Sales", "This Year Sales", "Payment Not Completed", "Payment Completed", "Reported", "Not Reported" }));
         viewCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewComboActionPerformed(evt);
@@ -801,6 +799,12 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
             } else if (viewCombo.getSelectedItem().equals("Payment Completed")) {
                 ArrayList<GETOrderModel> todaySales = getPaymentCompleted();
                 addRows(todaySales);
+            } else if (viewCombo.getSelectedItem().equals("Reported")) {
+                ArrayList<GETOrderModel> todaySales = getReportedOrders();
+                addRows(todaySales);
+            } else if (viewCombo.getSelectedItem().equals("Not Reported")) {
+                ArrayList<GETOrderModel> todaySales = getNotReportedOrders();
+                addRows(todaySales);
             }
 
         } catch (SQLException | ClassNotFoundException | RemoteException | MalformedURLException | NotBoundException ex) {
@@ -895,8 +899,8 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
                 } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(ViewSaleBigWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }else{
-                
+            } else {
+
             }
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
@@ -1084,7 +1088,7 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
     public void reportedColor() {
         TableFormat tableFormat = new TableFormat();
         tableFormat.setNotPayList(reported);
-        tableFormat.setCellBackground(255, 0, 0);
+        tableFormat.setCellBackground(255, 180, 180);
         tableFormat.setCellForeground(255, 255, 255);
         orderViewTable.getColumnModel().getColumn(9).setCellRenderer(tableFormat);
     }
@@ -1351,6 +1355,46 @@ public class ViewSaleBigWindow extends javax.swing.JFrame {
                 orderViewTable.addRowSelectionInterval(i, i);
             }
         }
+    }
+
+    private ArrayList<GETOrderModel> getReportedOrders() {
+        ArrayList<GETOrderModel> temp = new ArrayList<>();
+        for (GETOrderModel gETOrderModel : allOrders) {
+            try {
+                NoteTableModel infoNoteTable = SaleControllerImplClient.getInfoNoteTable(gETOrderModel.getOrderModel().getOrderId());
+                if (infoNoteTable != null) {
+                    boolean equals = infoNoteTable.getIsReport().equals("1");
+                    if (equals) {
+                        temp.add(gETOrderModel);
+                    }
+                }
+            } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
+                Logger.getLogger(ViewSaleBigWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        return temp;
+    }
+
+    private ArrayList<GETOrderModel> getNotReportedOrders() {
+        ArrayList<GETOrderModel> temp = new ArrayList<>();
+        for (GETOrderModel gETOrderModel : allOrders) {
+            try {
+                NoteTableModel infoNoteTable = SaleControllerImplClient.getInfoNoteTable(gETOrderModel.getOrderModel().getOrderId());
+                if (infoNoteTable != null) {
+                    boolean equals = infoNoteTable.getIsReport().equals("1");
+                    if (!equals) {
+                        temp.add(gETOrderModel);
+                    }
+                }else{
+                    temp.add(gETOrderModel);
+                }
+            } catch (NotBoundException | MalformedURLException | RemoteException | SQLException | ClassNotFoundException ex) {
+                Logger.getLogger(ViewSaleBigWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        return temp;
     }
 
 }

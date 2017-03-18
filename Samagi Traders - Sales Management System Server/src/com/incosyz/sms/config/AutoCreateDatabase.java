@@ -32,7 +32,7 @@ public class AutoCreateDatabase {
             String dbName = "samagi";
             String host = "localhost";
             String username = "root";
-            String password = "mysql";
+            String password = "admin";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://" + host, username, password);
             String sql = "create database " + dbName;
